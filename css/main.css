@@ -1,0 +1,85 @@
+/*NAVIGATION*/
+/* -------------------------------------------------- */
+
+.bg-primary {
+  background-color: #5580E9!important;
+}
+
+.navbar-brand {
+  font-family: 'Raleway', sans-serif;
+  font-weight: 700;
+  letter-spacing: 1px;
+  font-size: .9em;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+.navbar-dark .navbar-nav .nav-link {
+  font-family: 'Raleway', sans-serif;
+  font-weight: 600;
+  letter-spacing: 1px;
+  font-size: .9em;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  color: white;
+}
+
+.dropdown-item {
+  font-family: 'Raleway', sans-serif;
+  letter-spacing: 1px;
+  font-size: .9em;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  color: #2C3532;
+}
+
+/*BODY CONTAINER*/
+/* -------------------------------------------------- */
+body > .container {
+  padding: 80px 15px 0;
+}
+
+/*HOMEPAGE TITLE*/
+/* -------------------------------------------------- */
+.homepage-intro h1 {
+  text-align: center;
+  color: #505050;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+.homepage-intro p {
+  text-align: center;
+  color: #505050;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+/*HOMEPAGE BODY*/
+/* -------------------------------------------------- */
+.homepage-body h4 {
+  border-radius: 0rem;
+  border: 1px solid rgba(0,0,0,.125);
+  padding: 1.25rem;
+  background-color: rgba(0,0,0,.03);
+  margin-bottom: 20px;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+.card {
+  border-radius: 0rem;
+  margin-bottom: 20px;
+}
+
+.card-header {
+  padding: 1.25rem;
+  background-color: #FFF;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+.card-body {
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
