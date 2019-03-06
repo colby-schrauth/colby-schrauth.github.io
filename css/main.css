@@ -53,6 +53,7 @@ body > .container {
   color: #505050;
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
+  margin-bottom: 50px;
 }
 
 /*HOMEPAGE BODY*/
@@ -82,4 +83,33 @@ body > .container {
 .card-body {
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
+}
+
+/* .card-body .col-sm-4 {
+  text-align: center;
+} */
+
+/*THOUGHTS*/
+/* -------------------------------------------------- */
+.thoughts-body h3 {
+  color: #F76D6D;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+/* Timestamp */
+#thought-timestamp {
+  font-family: 'Lato', sans-serif;
+  font-weight: 300;
+  font-size: 15px;
+  color: #505050;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+.thoughts-body p {
+  color: #505050;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  margin-bottom: 50px;
 }
