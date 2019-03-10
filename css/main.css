@@ -110,13 +110,22 @@ body > .container {
 }
 
 .card-body dt {
-  color: red;
+  color: #3E3E3E;
+  font-family: 'Cormorant Garamond', serif;
+  font-weight: 500;
+  font-size: 1.33em;
+  -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
 }
 
 dd {
   margin-bottom: 0px;
+  color: #AAA;
+  font-family: 'Cormorant Garamond', serif;
+  font-weight: 500;
+  font-size: 1.33em;
+  /* padding-top: .1em; */
 }
 
 ul {
@@ -130,7 +139,6 @@ dl {
 
 .homepage-body li {
     color: #3E3E3E;
-    font-size: 1.33em;
     list-style-type: none;
     font-family: 'Cormorant Garamond', serif;
     font-weight: 500;
@@ -176,7 +184,7 @@ dl {
   font-family: 'Lato', sans-serif;
   font-weight: 300;
   font-size: .5em;
-  color: #505050;
+  color: #AB8863;
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
 }
@@ -184,6 +192,7 @@ dl {
 .thoughts-body p {
   font-family: 'Cormorant Garamond', serif;
   color: #505050;
+  font-size: 20px;
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
   -moz-osx-font-smoothing: grayscale;
