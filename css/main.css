@@ -2,7 +2,7 @@
 /* -------------------------------------------------- */
 
 .bg-primary {
-  background-color: #5580E9!important;
+  background-color: #3E3E3E!important;
 }
 
 .navbar-brand {
@@ -25,7 +25,7 @@
 }
 
 .dropdown-item {
-  font-family: 'Raleway', sans-serif;
+  font-family: 'Montserrat', sans-serif;
   letter-spacing: 1px;
   font-size: .9em;
   -webkit-font-smoothing: antialiased;
@@ -35,6 +35,10 @@
 
 /*BODY CONTAINER*/
 /* -------------------------------------------------- */
+body {
+    background-color: #F4F8FB;
+}
+
 body > .container {
   padding: 80px 15px 0;
 }
@@ -42,41 +46,61 @@ body > .container {
 /*HOMEPAGE TITLE*/
 /* -------------------------------------------------- */
 .homepage-intro h1 {
-  text-align: center;
+  text-align: left;
+  font-size: 35px;
   color: #505050;
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
+  -moz-osx-font-smoothing: grayscale;
+  font-family: 'Roboto', serif;
+  font-weight: 600;
 }
 
 .homepage-intro p {
-  text-align: center;
+  font-family: 'Cormorant Garamond', serif;
+  font-weight: 500;
+  font-size: 20px;
+  text-align: left;
   color: #505050;
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
+  -moz-osx-font-smoothing: grayscale;
   margin-bottom: 50px;
 }
 
 /*HOMEPAGE BODY*/
 /* -------------------------------------------------- */
 .homepage-body h4 {
-  border-radius: 0rem;
+  font-family: 'Cormorant Garamond', serif;
+  letter-spacing: .5px;
+  font-weight: 600;
+  color: #FFF;
+  font-size: 1.75em;
+  border-radius: 3px;
   border: 1px solid rgba(0,0,0,.125);
   padding: 1.25rem;
-  background-color: rgba(0,0,0,.03);
+  background-color: #016271;
   margin-bottom: 20px;
   -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
   text-rendering: optimizeLegibility;
+  box-shadow: 8px 14px 38px rgba(39,44,49,.06), 1px 3px 8px rgba(39,44,49,.03);
 }
 
 .card {
-  border-radius: 0rem;
+  border-radius: 3px;
   margin-bottom: 20px;
+  box-shadow: 8px 14px 38px rgba(39,44,49,.06), 1px 3px 8px rgba(39,44,49,.03);
 }
 
 .card-header {
+  color: #3E3E3E;
   padding: 1.25rem;
+  font-size: 1.25em;
+  font-family: 'Raleway', sans-serif;
   background-color: #FFF;
   -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
   text-rendering: optimizeLegibility;
 }
 
@@ -85,14 +109,64 @@ body > .container {
   text-rendering: optimizeLegibility;
 }
 
-/* .card-body .col-sm-4 {
-  text-align: center;
-} */
+.card-body dt {
+  color: red;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+dd {
+  margin-bottom: 0px;
+}
+
+ul {
+  margin-bottom: 0px;
+}
+
+dl {
+  margin-top: .6rem;
+  margin-bottom: .6rem;
+}
+
+.homepage-body li {
+    color: #3E3E3E;
+    font-size: 1.33em;
+    list-style-type: none;
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 500;
+}
+.homepage-body li:before {
+    content: '\2022';
+    color: #016271;
+    padding-right: 0.5em;
+}
+
+/*QUOTES*/
+/* -------------------------------------------------- */
+.quote-body {
+  font-family: 'Cormorant Garamond', serif;
+  font-weight: 500;
+  font-size: 20px;
+  color: #505050;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+  margin-top: .6rem;
+}
+
+.quote-author {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+  color: #AB8863;
+  margin-bottom: .6rem;
+}
 
 /*THOUGHTS*/
 /* -------------------------------------------------- */
 .thoughts-body h3 {
-  color: #F76D6D;
+  color: #016271;
+  font-family: 'Cormorant Garamond', serif;
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
 }
@@ -101,15 +175,30 @@ body > .container {
 #thought-timestamp {
   font-family: 'Lato', sans-serif;
   font-weight: 300;
-  font-size: 15px;
+  font-size: .5em;
   color: #505050;
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
 }
 
 .thoughts-body p {
+  font-family: 'Cormorant Garamond', serif;
   color: #505050;
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
+  -moz-osx-font-smoothing: grayscale;
   margin-bottom: 50px;
+}
+
+/*FOOTER*/
+/* -------------------------------------------------- */
+.footer {
+  color: #B3B3B3;
+  letter-spacing: .5px;
+  text-align: center;
+  margin-bottom: 20px;
+  margin-top: 20px;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  -moz-osx-font-smoothing: grayscale;
 }
