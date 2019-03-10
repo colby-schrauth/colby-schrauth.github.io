@@ -45,6 +45,10 @@ body > .container {
 
 /*HOMEPAGE TITLE*/
 /* -------------------------------------------------- */
+.homepage-intro {
+  background-image: url('.../assets/skyline.png');
+}
+
 .homepage-intro h1 {
   text-align: left;
   font-size: 35px;
