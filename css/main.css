@@ -6,10 +6,10 @@
 }
 
 .navbar-brand {
-  font-family: 'Raleway', sans-serif;
-  font-weight: 700;
+  font-family: 'Amiri', serif;
+  /* font-weight: 700; */
   letter-spacing: 1px;
-  font-size: .9em;
+  font-size: 1.1em;
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
 }
@@ -45,10 +45,6 @@ body > .container {
 
 /*HOMEPAGE TITLE*/
 /* -------------------------------------------------- */
-.homepage-intro {
-  background-image: url('.../assets/skyline.png');
-}
-
 .homepage-intro h1 {
   text-align: left;
   font-size: 35px;
@@ -69,15 +65,15 @@ body > .container {
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
   -moz-osx-font-smoothing: grayscale;
-  margin-bottom: 50px;
 }
 
 /*HOMEPAGE BODY*/
 /* -------------------------------------------------- */
 .homepage-body h4 {
-  font-family: 'Cormorant Garamond', serif;
-  letter-spacing: .5px;
+  font-family: 'Raleway', sans-serif;
   font-weight: 600;
+  letter-spacing: 1px;
+  text-transform: uppercase;
   color: #FFF;
   font-size: 1.75em;
   border-radius: 3px;
@@ -100,8 +96,11 @@ body > .container {
 .card-header {
   color: #3E3E3E;
   padding: 1.25rem;
-  font-size: 1.25em;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-size: .9em;
   font-family: 'Raleway', sans-serif;
+  font-weight: 400;
   background-color: #FFF;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -125,11 +124,10 @@ body > .container {
 
 dd {
   margin-bottom: 0px;
-  color: #AAA;
-  font-family: 'Cormorant Garamond', serif;
-  font-weight: 500;
+  color: #AB8863;
+  font-family: 'Amiri', serif;
   font-size: 1.33em;
-  /* padding-top: .1em; */
+  /* padding-top: .33em; */
 }
 
 ul {
@@ -172,6 +170,8 @@ dl {
   text-rendering: optimizeLegibility;
   color: #AB8863;
   margin-bottom: .6rem;
+  font-size: 18px;
+  font-family: 'Amiri', serif;
 }
 
 /*THOUGHTS*/
@@ -185,8 +185,7 @@ dl {
 
 /* Timestamp */
 #thought-timestamp {
-  font-family: 'Lato', sans-serif;
-  font-weight: 300;
+  font-family: 'Amiri', serif;
   font-size: .5em;
   color: #AB8863;
   -webkit-font-smoothing: antialiased;
@@ -211,6 +210,8 @@ dl {
   text-align: center;
   margin-bottom: 20px;
   margin-top: 20px;
+  font-family: 'Amiri', serif;
+  text-transform: uppercase;
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
   -moz-osx-font-smoothing: grayscale;
