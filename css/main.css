@@ -2,7 +2,7 @@
 /* -------------------------------------------------- */
 
 .bg-primary {
-  background-color: #3E3E3E!important;
+  background-color: #354458!important;
 }
 
 .navbar-brand {
@@ -74,12 +74,12 @@ body > .container {
   font-weight: 600;
   letter-spacing: 1px;
   text-transform: uppercase;
-  color: #FFF;
+  color: #505050;
   font-size: 1.75em;
   border-radius: 3px;
   border: 1px solid rgba(0,0,0,.125);
   padding: 1.25rem;
-  background-color: #016271;
+  background-color: #FFF;
   margin-bottom: 20px;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
