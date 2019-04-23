@@ -202,6 +202,21 @@ dl {
   margin-bottom: 50px;
 }
 
+/*ARTICLES*/
+/* -------------------------------------------------- */
+
+.article-link {
+  margin-bottom: 10px;
+}
+
+.article-link a {
+  color: #007bff;
+}
+
+.article-category {
+  color: #505050;
+}
+
 /*FOOTER*/
 /* -------------------------------------------------- */
 .footer {
