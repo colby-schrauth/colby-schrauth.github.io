@@ -98,7 +98,7 @@ body > .container {
 .card-header {
   color: #3E3E3E;
   padding: 1.25rem;
-  text-transform: uppercase;
+  /* text-transform: uppercase; */
   letter-spacing: 1px;
   font-size: .9em;
   /* font-family: 'Amiri', serif; */
@@ -244,4 +244,31 @@ dl {
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
   -moz-osx-font-smoothing: grayscale;
+}
+
+
+
+
+
+div.gallery {
+  float: left;
+  width: 33%;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 5px;
+}
+
+div.gallery:hover {
+}
+
+div.gallery img {
+  width: 100%;
+  height: auto;
+}
+
+div.desc {
+  padding: 10px;
+  text-align: center;
+  font-size: 13px;
 }
