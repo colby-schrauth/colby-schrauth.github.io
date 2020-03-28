@@ -234,7 +234,7 @@ dl {
 .blog_article_title {
   font-weight: 600;
   font-size: 2em;
-  letter-spacing: 1px;
+  letter-spacing: .5px;
   color: #242628;
   margin: 0px 0px 10px 0px;
   -webkit-font-smoothing: antialiased;
@@ -253,19 +253,20 @@ dl {
   color: #343f44;
   text-align: justify;
   hyphens: auto;
-  font-size: 1.25em;
+  font-size: 1em;
 }
 
 /*FOOTER*/
 /* -------------------------------------------------- */
 .footer {
   color: #B3B3B3;
-  letter-spacing: .5px;
   text-align: center;
   margin-bottom: 20px;
   margin-top: 20px;
-  font-family: 'Amiri', serif;
   text-transform: uppercase;
+  font-weight: 300;
+  letter-spacing: 1px;
+  font-size: 1em;
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
   -moz-osx-font-smoothing: grayscale;

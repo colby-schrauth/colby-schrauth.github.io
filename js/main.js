@@ -27,15 +27,28 @@ let myChart = new Chart(CHART, {
             borderWidth: 1
         }]
     },
+    // options: {
+    //     scales: {
+    //         yAxes: [{
+    //             ticks: {
+    //                 beginAtZero: true
+    //             }
+    //         }]
+    //     }
+    // }
     options: {
-        scales: {
-            yAxes: [{
-                ticks: {
-                    beginAtZero: true
-                }
-            }]
+    scales: {
+      xAxes: [{
+        gridLines: {
+          display: false
         }
+      }],
+      yAxes: [{
+        ticks: {beginAtZero: true},
+        gridLines: {display: true}
+      }]
     }
+  }
 });
 
 
