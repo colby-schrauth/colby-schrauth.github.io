@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Page Title -->
+    <title>Colby Schrauth</title>
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+
+    <link href="https://unpkg.com/tabulator-tables@4.5.3/dist/css/tabulator.min.css" rel="stylesheet">
+    <script type="text/javascript" src="https://unpkg.com/tabulator-tables@4.5.3/dist/js/tabulator.min.js"></script>
+
+    <!-- Custom styles for this template -->
+    <link href="../css/main.css" rel="stylesheet">
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Raleway:400,600,700" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Cormorant+Garamond:400,500,600,700" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:700" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Amiri:400,700" rel="stylesheet">
+
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="../assets/favicon.png">
+
+  </head>
+  <body>
+      <nav class="navbar navbar-expand-md navbar-dark bg-primary">
+        <div class="container">
+        <a class="navbar-brand abs" href="../index.html">COLBY SCHRAUTH</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsingNavbar">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+          <div class="navbar-collapse collapse" id="collapsingNavbar">
+            <ul class="navbar-nav ml-auto">
+              <li class="nav-item">
+                <a class="nav-link" href="../index.html">SCRAPBOOK</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="../thoughts.html">THOUGHTS</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="../articles.html">ARTICLES</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="../about.html">ABOUT</a>
+              </li>
+          </ul>
+        </div>
+        </div>
+      </nav>
+    <div class="container">
+
+      <div class="blog_article_title">Measuring Equality in Python</div>
+      <div class="blog_article_subtitle">June 4, 2017 - Half Moon Bay, California</div>
+      <div class="blog_article_body">
+        Distribution inequality can be measured via a Lorenz Curve and/or Gini Coefficient. Here's a best attempt at defining both, in simple terms:<br><br>
+        <ul>
+          <li><strong>Lorenz Curve</strong> - line chart visualizing the cumulative percentage of <u><em>something</u></em> (ie. distribution of wealth in a given country) for a given population</li>
+          <li><strong>Gini Coefficient</strong> - a number from 0 to 1 representing the degree of equality (<span style="color:red">0</span> = Complete equality  |  <span style="color:green">1</span> = Complete inequality)</li>
+        </ul>
+        <br>
+
+        ​​What is this used for? A common area is wealth distribution. For example, if one wanted to put a statistical lens over the popular US political slogan, "We are the 99%". Internalizing the Gini Coefficient for a country's distribution of wealth provokes a deeper understanding of the topic, as well as a measurement to contrast against other geographic locations.
+        <br>
+        <br>
+        The Lorenz Curve and Gini Coefficient can be used to represent the level of inequality in many places outside of wealth distribution as well.
+        For example, it could be used to measure <u>revenue concentration by customers</u>, <u>usage of datasets in a BI Tool</u>, or <u>usage of features in a Web Application</u>.
+      <br><br>
+        <strong>General steps for computing the <u>Gini Coefficient</u>:</strong><br><br>
+          <ul>
+            <li>Load data of interest – in the example below we're using a dataset containing 25 fictitious annual gross salaries</li>
+            <li>Sort data in ascending order</li>
+            <li>Store the line of perfect equality in an array</li>
+            <li>Store the cumulative % of each individual annual income in an array</li>
+            <li>Compute the area between the line of perfect equality and the distribution of income</li>
+          </ul>
+          <br>
+        Now, let's rock this out in Python:
+        <br><br>
+
+     <script src="https://gist.github.com/colby-schrauth/3eaf03f2234b8e85c62aeb531987c988.js"></script>
+
+   </div>
+      <br>
+      <hr>
+      <div class="footer">Colby Schrauth ©2020</div>
+
+    </div>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.js"></script>
+    <script src="../js/main.js"></script>
+  </body>
+</html>
