@@ -259,7 +259,7 @@ dl {
 /* Tables */
 /* -------------------------------------------------- */
 .list-table {
-  /* white-space:nowrap; */
+  white-space:nowrap;
   text-align: left;
   hyphens: none;
   line-height: normal;
