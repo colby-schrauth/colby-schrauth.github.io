@@ -20,7 +20,7 @@ var table = new Tabulator("#book-list", {
 	history:true,             //allow undo and redo actions on the table
 	// pagination:"local",       //paginate the data
 	// paginationSize:10,         //allow 7 rows per page of data
-	// movableColumns:true,      //allow column order to be changed
+	// movableColumns:false,      //allow column order to be changed
 	// resizableRows:true,       //allow row order to be changed
 	initialSort:[             //set the initial sort order of the data
 		{column:"id", dir:"asc"},
