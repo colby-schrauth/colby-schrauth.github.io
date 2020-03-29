@@ -259,10 +259,18 @@ dl {
 /* Tables */
 /* -------------------------------------------------- */
 .list-table {
-  white-space:nowrap;
+  /* white-space:nowrap; */
   text-align: left;
   hyphens: none;
   line-height: normal;
+}
+
+.list-table th {
+  vertical-align: middle;
+}
+
+.list-table td {
+  vertical-align: middle;
 }
 
 /*FOOTER*/
