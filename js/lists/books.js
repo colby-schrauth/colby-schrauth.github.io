@@ -13,15 +13,15 @@ var tableData = [
 
 var table = new Tabulator("#book-list", {
 	data:tableData,           //load row data from array
-	layout:"fitColumns",      //fit columns to width of table
+	layout:"fitDataFill",      //fit columns to width of table
 	// responsiveLayout:"hide",  //hide columns that dont fit on the table
-	tooltips:true,            //show tool tips on cells
+	// tooltips:true,            //show tool tips on cells
 	addRowPos:"top",          //when adding a new row, add it to the top of the table
 	history:true,             //allow undo and redo actions on the table
 	// pagination:"local",       //paginate the data
-	paginationSize:10,         //allow 7 rows per page of data
-	movableColumns:true,      //allow column order to be changed
-	resizableRows:true,       //allow row order to be changed
+	// paginationSize:10,         //allow 7 rows per page of data
+	// movableColumns:true,      //allow column order to be changed
+	// resizableRows:true,       //allow row order to be changed
 	initialSort:[             //set the initial sort order of the data
 		{column:"id", dir:"asc"},
 	],
