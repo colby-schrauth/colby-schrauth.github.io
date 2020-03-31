@@ -41,7 +41,7 @@ body {
 }
 
 body > .container {
-  padding: 80px 15px 0;
+  padding: 35px 15px 0;
 }
 
 /*HOMEPAGE TITLE*/
@@ -59,7 +59,8 @@ body > .container {
 .homepage-intro p {
   font-weight: 400;
   font-size: 1em;
-  text-align: left;
+  text-align: justify;
+  hyphens: auto;
   color: #505050;
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
@@ -191,7 +192,9 @@ dl {
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
   -moz-osx-font-smoothing: grayscale;
-  margin-bottom: 50px;
+  text-align: justify;
+  hyphens: auto;
+  margin-bottom: 35px;
 }
 
 /*ARTICLES*/
