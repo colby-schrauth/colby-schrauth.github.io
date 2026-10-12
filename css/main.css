@@ -178,7 +178,7 @@ dl {
 }
 
 /* Timestamp */
-#thought-timestamp {
+.thought-timestamp {
   font-size: .75em;
   color: #AB8863;
   font-weight: 300;
@@ -247,6 +247,28 @@ dl {
   text-align: justify;
   hyphens: auto;
   font-size: 1em;
+}
+
+.blog_article_body img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 20px auto;
+}
+
+.blog_article_body blockquote {
+  border-left: 3px solid #AB8863;
+  padding-left: 1rem;
+  color: #738a94;
+  font-style: italic;
+}
+
+.blog_article_body pre {
+  background-color: #FFF;
+  border: 1px solid rgba(0,0,0,.125);
+  border-radius: 3px;
+  padding: 1rem;
+  text-align: left;
 }
 
 /* Tables */

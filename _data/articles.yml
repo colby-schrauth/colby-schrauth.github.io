@@ -1,0 +1,32 @@
+# Categories shown on the Articles page, in order.
+# Posts in _posts/ appear automatically under their `category:` (newest first).
+# `links` are articles published elsewhere, or older hand-written pages in blog/.
+- name: Data
+  links:
+    - title: What is a Local Database, and How to Get Setup?
+      url: https://www.sfdataschool.com/blog/what-is-a-local-database-and-how-to-get-setup
+    - title: Data for Practicing SQL
+      url: https://www.sfdataschool.com/blog/data-for-practicing-sql
+    - title: The Difference Between Absolute, Basis Point, Multiple, Percent, and Percentage Point Change
+      url: https://www.sfdataschool.com/blog/the-difference-between-absolute-basis-point-multiple-percent-and-percentage-point-change
+    - title: If You Only Learn One Thing with Data, Learn This
+      url: https://medium.com/sfdataschool/if-you-only-learn-one-thing-in-working-with-data-learn-this-9fdb9c0cd0f9
+    - title: 5 Simple Spreadsheet Design Tactics to Radically Improve your Work
+      url: https://medium.com/sfdataschool/5-simple-spreadsheet-design-tactics-to-radically-improve-your-work-8e287425bb32
+    - title: Why We're starting The San Francisco Data School
+      url: https://medium.com/sfdataschool/why-were-starting-sf-data-school-a00531c60f78
+    - title: Average Annual Return of 25%, but $0 of Growth?
+      url: https://www.sfdataschool.com/blog/average-annual-return-of-25-but-0-of-growth
+    - title: The Best Way to Present a Spreadsheet to a Group
+      url: https://www.sfdataschool.com/blog/the-best-way-to-present-a-spreadsheet-to-a-group
+    - title: A Beginner's Guide to Data
+      url: https://www.sfdataschool.com/blog/a-beginners-guide-to-data
+    - title: "A Fresh Perspective: Big Data"
+      url: https://www.sfdataschool.com/blog/a-fresh-perspective_big-data
+    - title: Measuring Equality in Python
+      url: /blog/measuring_equality_python.html
+
+- name: Guides
+  links:
+    - title: An Illustrated Guide to Restricted Stock Units (RSUs)
+      url: /blog/rsu.html

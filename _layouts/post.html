@@ -1,0 +1,9 @@
+---
+layout: default
+---
+      <div class="blog_article_title">{{ page.title }}</div>
+      <div class="blog_article_subtitle">{{ page.date | date: "%B %-d, %Y" }}{% if page.location %} - {{ page.location }}{% endif %}</div>
+      <div class="blog_article_body">
+{{ content }}
+      </div>
+      <br>

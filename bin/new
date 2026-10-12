@@ -1,0 +1,35 @@
+#!/usr/bin/env bash
+# Start a new piece of writing with the front matter filled in.
+#   bin/new post "My Post Title"      -> _drafts/my-post-title.md (publish with bin/publish)
+#   bin/new thought "My Thought"      -> _thoughts/YYYY-MM-DD-my-thought.md
+set -euo pipefail
+cd "$(dirname "$0")/.."
+
+kind="${1:-}"; title="${2:-}"
+if [[ -z "$kind" || -z "$title" ]]; then
+  echo "usage: bin/new post|thought \"Title\"" >&2; exit 1
+fi
+
+slug=$(echo "$title" | tr '[:upper:]' '[:lower:]' | sed -E 's/[^a-z0-9]+/-/g; s/^-|-$//g')
+today=$(date +%Y-%m-%d)
+location="${LOCATION:-Half Moon Bay, CA}"
+
+case "$kind" in
+  post)    file="_drafts/$slug.md"
+           extra=$'category: Data\ndescription: One sentence for link previews and search results.' ;;
+  thought) file="_thoughts/$today-$slug.md"; extra="" ;;
+  *)       echo "unknown kind: $kind (use post or thought)" >&2; exit 1 ;;
+esac
+
+[[ -e "$file" ]] && { echo "already exists: $file" >&2; exit 1; }
+{
+  echo "---"
+  echo "title: \"$title\""
+  [[ "$kind" == thought ]] && echo "date: $today"
+  echo "location: $location"
+  [[ -n "$extra" ]] && echo "$extra"
+  echo "---"
+  echo
+  echo "Start writing here."
+} > "$file"
+echo "$file"

@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+# Move a draft into _posts/ with today's date, ready to commit and push.
+#   bin/publish _drafts/my-post-title.md
+set -euo pipefail
+cd "$(dirname "$0")/.."
+draft="${1:?usage: bin/publish _drafts/<slug>.md}"
+dest="_posts/$(date +%Y-%m-%d)-$(basename "$draft")"
+git mv "$draft" "$dest" 2>/dev/null || mv "$draft" "$dest"
+echo "$dest"

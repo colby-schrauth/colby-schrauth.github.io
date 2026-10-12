@@ -1,0 +1,33 @@
+title: Colby Schrauth
+description: Thoughts, articles and a scrapbook from Colby Schrauth.
+url: https://colbyschrauth.com
+timezone: America/Los_Angeles
+
+markdown: kramdown
+plugins:
+  - jekyll-feed
+
+# New posts live at /blog/<slug>.html, alongside the older hand-written ones.
+permalink: /blog/:title.html
+
+collections:
+  thoughts:
+    output: false # thoughts only appear on thoughts.html, not as their own pages
+
+defaults:
+  - scope:
+      path: ""
+      type: posts
+    values:
+      layout: post
+
+feed:
+  path: feed.xml
+
+exclude:
+  - README.md
+  - Gemfile
+  - Gemfile.lock
+  - bin
+  - vendor
+  - .DS_Store
