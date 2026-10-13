@@ -1,6 +1,6 @@
 # Categories shown on the Articles page, in order.
 # Posts in _posts/ appear automatically under their `category:` (newest first).
-# `links` are articles published elsewhere, or older hand-written pages in blog/.
+# `links` are articles published elsewhere (on SF Data School, Medium, etc.).
 - name: Data
   links:
     - title: What is a Local Database, and How to Get Setup?
@@ -23,10 +23,5 @@
       url: https://www.sfdataschool.com/blog/a-beginners-guide-to-data
     - title: "A Fresh Perspective: Big Data"
       url: https://www.sfdataschool.com/blog/a-fresh-perspective_big-data
-    - title: Measuring Equality in Python
-      url: /blog/measuring_equality_python.html
 
 - name: Guides
-  links:
-    - title: An Illustrated Guide to Restricted Stock Units (RSUs)
-      url: /blog/rsu.html

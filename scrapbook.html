@@ -1,0 +1,53 @@
+---
+layout: default
+title: Scrapbook
+nav: scrapbook
+description: Favorite books, shows, podcasts, quotes and photos.
+---
+<header class="page-head">
+  <p class="kicker">scrapbook</p>
+  <h1>Things I love<span class="dot">.</span></h1>
+  <p>Favorite books, shows, podcasts and quotes, plus a few photos.</p>
+</header>
+
+<section class="category">
+  <div class="section-head"><h2>Top 10 lists</h2></div>
+  <ul class="rows">
+    <li><a href="{{ '/lists/books.html' | relative_url }}"><span class="title">Books</span><span class="meta">{{ site.data.books.items.size }} picks</span></a></li>
+    <li><a href="{{ '/lists/shows.html' | relative_url }}"><span class="title">Shows</span><span class="meta">{{ site.data.shows.items.size }} picks</span></a></li>
+  </ul>
+</section>
+
+<section class="category">
+  <div class="section-head"><h2>Podcasts</h2></div>
+  <ul class="rows">
+    <li><a href="http://podcasts.joerogan.net/podcasts/naval-ravikant"><span class="title">Naval Ravikant on The Joe Rogan Experience</span><span class="meta">#1309 ↗</span></a></li>
+    <li><a href="https://tim.blog/2019/05/07/ramit-sethi/"><span class="title">Ramit Sethi on The Tim Ferriss Show</span><span class="meta">#371 ↗</span></a></li>
+  </ul>
+</section>
+
+<section class="category">
+  <div class="section-head"><h2>Quotes</h2></div>
+  <div class="quotes">
+    <figure class="quote">
+      <blockquote>“All of humanity’s problems stem from man’s inability to sit quietly in a room alone.”</blockquote>
+      <figcaption class="mono muted">blaise pascal</figcaption>
+    </figure>
+    <figure class="quote">
+      <blockquote>“There are so many people working so hard and achieving so little.”</blockquote>
+      <figcaption class="mono muted">andy grove</figcaption>
+    </figure>
+  </div>
+</section>
+
+<section class="category">
+  <div class="section-head"><h2>Photos</h2></div>
+  <div class="photos">
+    <img loading="lazy" src="{{ '/assets/photos/IMG_0201.jpg' | relative_url }}" alt="Sunset over the Pacific from a bluff above the beach">
+    <img loading="lazy" src="{{ '/assets/photos/IMG_0514.jpg' | relative_url }}" alt="A golden retriever sitting on a storage box in front of a surfing mural">
+    <img loading="lazy" src="{{ '/assets/photos/IMG_0588.jpg' | relative_url }}" alt="A two-tone VW bus on wet pavement between olive trees, in black and white">
+    <img loading="lazy" src="{{ '/assets/photos/IMG_0361.jpg' | relative_url }}" alt="Snowy mountains reflected in a still lake">
+    <img loading="lazy" src="{{ '/assets/photos/IMG_0411.jpg' | relative_url }}" alt="A tropical bay below green, cloud-topped mountains">
+    <img loading="lazy" src="{{ '/assets/photos/IMG_0366.jpg' | relative_url }}" alt="A wooden dock reaching into a calm, hazy lake">
+  </div>
+</section>

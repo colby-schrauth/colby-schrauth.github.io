@@ -1,11 +1,21 @@
 ---
 layout: default
 title: Thoughts
+nav: thoughts
+description: Short thoughts, written down as they come.
 ---
-    <div class="thoughts-body">
-      {% assign thoughts = site.thoughts | sort: "date" | reverse %}
-      {% for thought in thoughts %}
-      <h3>{{ thought.title }}<br><span class="thought-timestamp">{{ thought.date | date: "%B %-d, %Y" }}{% if thought.location %} - {{ thought.location }}{% endif %}</span></h3>
-      {{ thought.content }}
-      {% endfor %}
-    </div>
+<header class="page-head">
+  <p class="kicker">thoughts</p>
+  <h1>Thinking out loud<span class="dot">.</span></h1>
+  <p>Short ideas, written down as they come.</p>
+</header>
+{% assign thoughts = site.thoughts | sort: "date" | reverse %}
+<div class="measure">
+  {% for thought in thoughts %}
+  <article class="thought" id="{{ thought.slug }}">
+    <h2><a href="#{{ thought.slug }}">{{ thought.title }}</a></h2>
+    <p class="meta mono muted">{{ thought.date | date: "%B %-d, %Y" | downcase }}{% if thought.location %} · {{ thought.location | downcase }}{% endif %}</p>
+    {{ thought.content }}
+  </article>
+  {% endfor %}
+</div>

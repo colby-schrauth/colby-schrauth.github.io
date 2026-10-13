@@ -41,8 +41,12 @@ First-time setup: `brew install ruby@3.3`, then `bundle install` (GitHub Pages' 
 
 ## Layout
 
-- `_layouts/default.html`: shared head, nav and footer
-- `_layouts/post.html`: article page
+- `css/site.css`: the whole design (Graphite + Brass, Newsreader + IBM Plex Mono)
+- `_layouts/default.html`: shared header, footer and ⌘K search (`js/site.js`)
+- `_layouts/post.html`, `_layouts/list.html`: article page and top-10 list page
 - `_thoughts/`, `_posts/`, `_drafts/`: writing, in Markdown
-- `_data/articles.yml`: Articles page categories and external links
-- `index.html`, `about.html`, `lists/`, `blog/*.html`: older hand-written pages, served as-is
+- `_data/articles.yml`: Writing page categories and links to articles published elsewhere
+- `_data/books.yml`, `_data/shows.yml`: the top-10 lists on the Scrapbook
+- `index.html`, `thoughts.html`, `articles.html`, `scrapbook.html`, `about.html`: the main pages
+- `assets/photos/`: web-sized photos (originals are in `assets/`)
+- `blog/domains.html`, `blog/surfbike.html`: unfinished, unlinked drafts in the old design

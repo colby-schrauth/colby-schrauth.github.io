@@ -1,0 +1,33 @@
+# Favorite books, in order. `why` is optional.
+updated: 2020-03-28
+items:
+  - title: The Ruthless Elimination of Hurry
+    by: John Mark Comer
+    why: Fantastic ideas for slowing life down
+  - title: Barbarian Days
+    by: William Finnegan
+    why: Just an awesome story, and very well written
+  - title: Naked Statistics
+    by: Charles Wheelan
+    why: Such a fantastic approach to breaking down complexity
+  - title: Fit for Life
+    by: Harvey and Marilyn Diamond
+    why: Incredibly surprising, yet rational things about food
+  - title: This is Marketing
+    by: Seth Godin
+    why: Motivation for becoming a creator
+  - title: Steve Jobs
+    by: Walter Isaacson
+    why: Always been a huge fan of Steve Jobs
+  - title: Start with Why
+    by: Simon Sinek
+    why: This TED Talk deeply inspired me for many years
+  - title: Zen and the Art of Motorcycle Maintenance
+    by: Robert Pirsig
+    why: Ignorance isn't always bliss
+  - title: Iron John
+    by: Robert Bly
+    why: Fun read about the current state of masculinity
+  - title: Ishmael
+    by: Daniel Quinn
+    why: Made me think pretty damn hard about life

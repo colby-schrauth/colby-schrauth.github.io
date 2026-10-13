@@ -1,15 +1,26 @@
 ---
 layout: default
-title: Articles
+title: Writing
+nav: writing
+description: Guides and articles on data, work and money.
 ---
-      {% for category in site.data.articles %}
-        <h4 class="article-category">{{ category.name }}</h4>
-        {% assign posts = site.posts | where: "category", category.name %}
-        {% for post in posts %}
-        <div class="article-link"><a href="{{ post.url | relative_url }}">{{ post.title }}</a></div>
-        {% endfor %}
-        {% for link in category.links %}
-        <div class="article-link"><a href="{{ link.url }}"{% if link.url contains "://" %} target="_blank"{% endif %}>{{ link.title }}</a></div>
-        {% endfor %}
-        <br>
-      {% endfor %}
+<header class="page-head">
+  <p class="kicker">writing</p>
+  <h1>Guides &amp; articles<span class="dot">.</span></h1>
+  <p>Longer pieces on data, work and money, here and around the web.</p>
+</header>
+{% for category in site.data.articles %}
+<section class="category">
+  <div class="section-head"><h2>{{ category.name }}</h2></div>
+  <ul class="rows">
+    {% assign posts = site.posts | where: "category", category.name %}
+    {% for post in posts %}
+    <li><a href="{{ post.url | relative_url }}"><span class="title">{{ post.title }}</span><span class="meta">{{ post.date | date: "%b %Y" | downcase }}</span></a></li>
+    {% endfor %}
+    {% for link in category.links %}
+    {% assign host = link.url | split: '/' %}
+    <li><a href="{{ link.url }}"><span class="title">{{ link.title }}</span><span class="meta">{{ host[2] | remove: 'www.' }} ↗</span></a></li>
+    {% endfor %}
+  </ul>
+</section>
+{% endfor %}
