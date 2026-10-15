@@ -1,14 +1,22 @@
 {%- comment -%} Everything the ⌘K menu can jump to. {%- endcomment -%}
 <script type="application/json" id="search-index">[
   {"title": "Home", "kind": "page", "url": {{ '/' | relative_url | jsonify }}},
-  {"title": "Writing", "kind": "page", "url": {{ '/articles.html' | relative_url | jsonify }}},
-  {"title": "Thoughts", "kind": "page", "url": {{ '/thoughts.html' | relative_url | jsonify }}},
-  {"title": "Scrapbook", "kind": "page", "url": {{ '/scrapbook.html' | relative_url | jsonify }}},
-  {"title": "About", "kind": "page", "url": {{ '/about.html' | relative_url | jsonify }}},
+  {%- for item in site.data.nav %}
+  {"title": {{ item.label | jsonify }}, "kind": "page", "url": {{ item.url | relative_url | jsonify }}},
+  {%- endfor %}
+  {"title": "Résumé", "kind": "about", "url": {{ '/about.html#resume' | relative_url | jsonify }}},
+  {"title": "Résumé (PDF)", "kind": "download", "url": {{ '/assets/colby-schrauth-resume.pdf' | relative_url | jsonify }}},
   {"title": "Favorite books", "kind": "list", "url": {{ '/lists/books.html' | relative_url | jsonify }}},
   {"title": "Favorite shows", "kind": "list", "url": {{ '/lists/shows.html' | relative_url | jsonify }}}
   {%- for post in site.posts %},
   {"title": {{ post.title | jsonify }}, "kind": {{ post.category | default: 'article' | downcase | jsonify }}, "url": {{ post.url | relative_url | jsonify }}}
+  {%- endfor %}
+  {%- for project in site.projects %},
+  {"title": {{ project.title | jsonify }}, "kind": "project", "url": {{ project.url | relative_url | jsonify }}}
+  {%- endfor %}
+  {%- for chapter in site.playbooks %}
+  {%- assign book = site.data.playbooks | where: "slug", chapter.playbook | first %},
+  {"title": {{ chapter.title | jsonify }}, "kind": {{ book.title | downcase | jsonify }}, "url": {{ chapter.url | replace: 'index.html', '' | relative_url | jsonify }}}
   {%- endfor %}
   {%- for thought in site.thoughts %},
   {"title": {{ thought.title | jsonify }}, "kind": "thought", "url": {{ '/thoughts.html#' | append: thought.slug | relative_url | jsonify }}}

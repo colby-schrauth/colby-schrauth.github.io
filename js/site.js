@@ -85,3 +85,32 @@
     });
   }
 })();
+
+// Buttons with data-copy put that text on the clipboard (e.g. the email icon) and say so briefly.
+(function () {
+  function copy(text) {
+    if (navigator.clipboard && window.isSecureContext) return navigator.clipboard.writeText(text);
+    const field = document.createElement('textarea');
+    field.value = text;
+    field.setAttribute('readonly', '');
+    field.style.position = 'fixed';
+    field.style.opacity = '0';
+    document.body.appendChild(field);
+    field.select();
+    const ok = document.execCommand('copy');
+    field.remove();
+    return ok ? Promise.resolve() : Promise.reject();
+  }
+
+  document.querySelectorAll('[data-copy]').forEach((button) => {
+    const status = button.querySelector('.copied');
+    let timer;
+    button.addEventListener('click', () => {
+      copy(button.dataset.copy)
+        .then(() => { status.textContent = 'Email copied'; })
+        .catch(() => { status.textContent = button.dataset.copy; });
+      clearTimeout(timer);
+      timer = setTimeout(() => { status.textContent = ''; }, 2000);
+    });
+  });
+})();

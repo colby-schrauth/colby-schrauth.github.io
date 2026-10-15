@@ -13,6 +13,12 @@ permalink: /blog/:title.html
 collections:
   thoughts:
     output: false # thoughts only appear on thoughts.html, not as their own pages
+  projects:
+    output: true # _projects/<name>.md -> /projects/<name>.html
+    permalink: /projects/:name:output_ext
+  playbooks:
+    output: true # _playbooks/<playbook>/<chapter>.md -> /playbooks/<playbook>/<chapter>.html
+    permalink: /playbooks/:path:output_ext
 
 defaults:
   - scope:
@@ -20,6 +26,18 @@ defaults:
       type: posts
     values:
       layout: post
+  - scope:
+      path: ""
+      type: projects
+    values:
+      layout: project
+      nav: projects
+  - scope:
+      path: ""
+      type: playbooks
+    values:
+      layout: playbook
+      nav: playbooks
 
 feed:
   path: feed.xml

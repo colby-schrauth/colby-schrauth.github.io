@@ -1,0 +1,33 @@
+# The Toolkit page: the tools I use, grouped into sections, in order.
+# Each tool has a `name`, an optional `url`, and `why` (one line on what I use it for).
+# Sections with no tools yet are hidden, so fill in the empty ones whenever.
+
+- section: Data
+  tools: []
+  #  - name: Tool name
+  #    url: https://...
+  #    why: What I use it for.
+
+- section: Marketing
+  tools: []
+
+- section: Running PRIORA
+  tools: []
+
+- section: Hardware
+  tools: []
+
+- section: This site
+  tools:
+    - name: Jekyll
+      url: https://jekyllrb.com
+      why: Turns plain Markdown files into this website.
+    - name: GitHub Pages
+      url: https://pages.github.com
+      why: Hosts it for free; pushing a change publishes it.
+    - name: Claude Code
+      url: https://claude.com/claude-code
+      why: Helps design and build it.
+    - name: Newsreader & IBM Plex Mono
+      url: https://fonts.google.com/specimen/Newsreader
+      why: The two typefaces, for reading and for labels.

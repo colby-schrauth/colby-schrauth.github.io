@@ -4,7 +4,6 @@ nav: scrapbook
 ---
 {% assign list = site.data[page.list] %}
 <header class="page-head">
-  <p class="kicker"><a href="{{ '/scrapbook.html' | relative_url }}">scrapbook</a> / top {{ list.items.size }}</p>
   <h1>{{ page.title }}</h1>
   <p>{{ page.intro }}</p>
   <p class="mono">last updated {{ list.updated | date: "%B %-d, %Y" | downcase }}</p>

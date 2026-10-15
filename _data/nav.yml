@@ -1,0 +1,22 @@
+# The main menu, in order. `key` matches a page's `nav:` front matter, to underline the current item.
+- label: About
+  url: /about.html
+  key: about
+- label: Writing
+  url: /articles.html
+  key: writing
+- label: Playbooks
+  url: /playbooks/
+  key: playbooks
+- label: Projects
+  url: /projects/
+  key: projects
+- label: Notes
+  url: /thoughts.html
+  key: thoughts
+- label: Toolkit
+  url: /toolkit.html
+  key: toolkit
+- label: Favorites
+  url: /scrapbook.html
+  key: scrapbook

@@ -2,19 +2,73 @@
 layout: default
 title: About
 nav: about
-description: Colby Schrauth is a Fractional Head of Data and the owner of PRIORA, based in New Hampshire.
+description: Colby Schrauth is a data and AI executive and the founder of PRIORA, based in New Hampshire.
 ---
+{% assign cv = site.data.resume %}
 <header class="page-head">
-  <p class="kicker">about</p>
   <h1>Hi, I'm Colby<span class="dot">.</span></h1>
 </header>
 
 <img class="about-photo" src="{{ '/assets/photos/IMG_0366.jpg' | relative_url }}" alt="A wooden dock reaching into a calm, hazy lake">
 
 <div class="prose">
-  <p>I'm a Fractional Head of Data and the owner of <a href="https://priora.io">PRIORA</a>. I live in New Hampshire.</p>
-  <p>Before PRIORA, I worked on the Product Operations team at <a href="https://about.google/">Google</a>, specializing in analytics for Google Cloud. Before that I was at <a href="https://www.weebly.com/">Weebly</a> (we got acquired by <a href="https://squareup.com/">Square</a>), and I've taught data analytics for <a href="https://generalassemb.ly/">General Assembly</a> in San Francisco and for <a href="https://sps.columbia.edu/academics/masters/applied-analytics">Columbia University's</a> MS in Applied Analytics program in New York.</p>
+  <p>I'm a data and AI executive and the founder of <a href="https://priora.io">PRIORA</a>, where I act as the outsourced head of data for founders and C-suites. I live in New Hampshire.</p>
   <p>I grew up in <a href="https://www.google.com/maps/place/Eden,+NY+14057">Eden, New York</a> and went to <a href="https://www.fau.edu/">Florida Atlantic University</a> in Boca Raton.</p>
   <p>I use this site to organize my thoughts, share my story, and hopefully help others. Thank you for visiting!</p>
-  <p>Say hello at <a href="mailto:colby.schrauth@gmail.com">colby.schrauth@gmail.com</a>, or find me on <a href="https://www.linkedin.com/in/colbyschrauth/">LinkedIn</a>, <a href="https://github.com/colby-schrauth">GitHub</a> and <a href="https://medium.com/@colby.schrauth">Medium</a>.</p>
+  <p>Say hello at <button type="button" class="copy-link" data-copy="colby.schrauth@gmail.com" title="Copy email address">colby.schrauth@gmail.com<span class="copied" role="status"></span></button>, or find me on <a href="https://www.linkedin.com/in/colbyschrauth/">LinkedIn</a> and <a href="https://github.com/colby-schrauth">GitHub</a>.</p>
 </div>
+
+<section class="resume" id="resume" aria-labelledby="resume-title">
+  <div class="section-head">
+    <h2 id="resume-title">Résumé</h2>
+    <p class="cv-actions mono">
+      <a href="{{ '/assets/colby-schrauth-resume.pdf' | relative_url }}" target="_blank" rel="noopener">view pdf ↗</a>
+      <a href="{{ '/assets/colby-schrauth-resume.pdf' | relative_url }}" download="Colby Schrauth - Resume.pdf">download ↓</a>
+    </p>
+  </div>
+  <p class="cv-headline mono">{{ cv.headline }}</p>
+  <div class="cv-profile">
+    {% for para in cv.profile %}<p>{{ para }}</p>{% endfor %}
+  </div>
+
+  <h3 class="cv-label mono">Experience</h3>
+  <ol class="cv-roles">
+    {% for role in cv.experience %}
+    <li class="cv-role">
+      <p class="cv-dates mono">{{ role.dates }}</p>
+      <div>
+        <h4>{{ role.title }}</h4>
+        <p class="cv-org">{% if role.url %}<a href="{{ role.url }}">{{ role.org }}</a>{% else %}{{ role.org }}{% endif %}{% if role.location %}<span class="mono"> · {{ role.location }}</span>{% endif %}</p>
+        {% if role.summary %}<p class="cv-summary">{{ role.summary }}</p>{% endif %}
+        <ul>
+          {% for bullet in role.bullets %}<li>{{ bullet }}</li>{% endfor %}
+        </ul>
+      </div>
+    </li>
+    {% endfor %}
+    <li class="cv-role">
+      <p class="cv-dates mono">{{ cv.early_career.dates }}</p>
+      <div>
+        <h4>Early career</h4>
+        <ul>
+          {% for role in cv.early_career.roles %}<li>{{ role }}</li>{% endfor %}
+        </ul>
+      </div>
+    </li>
+  </ol>
+
+  <div class="cv-grid">
+    <div>
+      <h3 class="cv-label mono">Teaching &amp; community</h3>
+      <ul>{% for item in cv.community %}<li>{{ item }}</li>{% endfor %}</ul>
+    </div>
+    <div>
+      <h3 class="cv-label mono">Technology</h3>
+      <ul class="cv-chips">{% for item in cv.technology %}<li>{{ item }}</li>{% endfor %}</ul>
+      <h3 class="cv-label mono">Education</h3>
+      <ul>{% for item in cv.education %}<li>{{ item }}</li>{% endfor %}</ul>
+      <h3 class="cv-label mono">Beyond work</h3>
+      <p>{{ cv.beyond_work }}</p>
+    </div>
+  </div>
+</section>

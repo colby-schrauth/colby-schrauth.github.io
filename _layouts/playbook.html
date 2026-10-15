@@ -1,0 +1,56 @@
+---
+layout: default
+---
+{% assign book = site.data.playbooks | where: "slug", page.playbook | first %}
+{% assign chapters = site.playbooks | where: "playbook", page.playbook | sort: "order" %}
+{% assign book_url = '/playbooks/' | append: book.slug | append: '/' | relative_url %}
+<div class="playbook">
+  <aside class="playbook-toc mono" aria-label="{{ book.title }} chapters">
+    <a class="toc-title" href="{{ book_url }}"{% if page.order == 0 %} aria-current="page"{% endif %}>{{ book.title | downcase }}</a>
+    {% for part in book.parts %}
+    {% assign in_part = chapters | where: "part", part %}
+    {% if in_part.size > 0 %}
+    <p class="toc-part">{{ part | downcase }}</p>
+    <ol>
+      {% for chapter in in_part %}
+      <li><a href="{{ chapter.url | relative_url }}"{% if chapter.url == page.url %} aria-current="page"{% endif %}><span class="num">{{ chapter.order | prepend: '0' | slice: -2, 2 }}</span>{{ chapter.title }}</a></li>
+      {% endfor %}
+    </ol>
+    {% endif %}
+    {% endfor %}
+  </aside>
+
+  <article class="playbook-body">
+    <header class="post-head">
+      <h1>{{ page.title }}</h1>
+      {% if page.status == 'outline' %}<p class="meta mono muted">outline · being written</p>{% endif %}
+    </header>
+    <div class="prose">
+{{ content }}
+    </div>
+
+    {% if page.order == 0 %}
+    {% for part in book.parts %}
+    {% assign in_part = chapters | where: "part", part %}
+    {% if in_part.size > 0 %}
+    <section class="category">
+      <div class="section-head"><h2>{{ part }}</h2></div>
+      <ul class="rows">
+        {% for chapter in in_part %}
+        <li><a href="{{ chapter.url | relative_url }}"><span class="title"><span class="num mono">{{ chapter.order | prepend: '0' | slice: -2, 2 }}</span>{{ chapter.title }}{% if chapter.description %}<span class="summary">{{ chapter.description }}</span>{% endif %}</span><span class="meta">{{ chapter.status | default: 'ready' }}</span></a></li>
+        {% endfor %}
+      </ul>
+    </section>
+    {% endif %}
+    {% endfor %}
+    {% else %}
+    {% for chapter in chapters %}{% if chapter.url == page.url %}{% assign i = forloop.index0 %}{% endif %}{% endfor %}
+    {% assign prev_i = i | minus: 1 %}{% assign next_i = i | plus: 1 %}
+    <nav class="pager mono" aria-label="Chapters">
+      {% assign prev = chapters[prev_i] %}{% assign next = chapters[next_i] %}
+      <a class="prev" href="{{ prev.url | replace: 'index.html', '' | relative_url }}">← {% if prev.order == 0 %}overview{% else %}{{ prev.title | downcase }}{% endif %}</a>
+      {% if next %}<a class="next" href="{{ next.url | relative_url }}">{{ next.title | downcase }} →</a>{% endif %}
+    </nav>
+    {% endif %}
+  </article>
+</div>

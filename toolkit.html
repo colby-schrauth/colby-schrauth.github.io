@@ -1,0 +1,26 @@
+---
+layout: default
+title: Toolkit
+nav: toolkit
+description: The software and gear Colby Schrauth uses for data, marketing and running a business.
+---
+<header class="page-head">
+  <h1>Toolkit<span class="dot">.</span></h1>
+  <p>The software and gear I use day to day, and what each one is for.</p>
+</header>
+{% for group in site.data.toolkit %}
+{% if group.tools.size > 0 %}
+<section class="category">
+  <div class="section-head"><h2>{{ group.section }}</h2></div>
+  <ul class="rows">
+    {% for tool in group.tools %}
+    {% if tool.url %}{% assign host = tool.url | split: '/' %}
+    <li><a href="{{ tool.url }}"><span class="title">{{ tool.name }}{% if tool.why %}<span class="summary">{{ tool.why }}</span>{% endif %}</span><span class="meta">{{ host[2] | remove: 'www.' }} ↗</span></a></li>
+    {% else %}
+    <li><div class="row"><span class="title">{{ tool.name }}{% if tool.why %}<span class="summary">{{ tool.why }}</span>{% endif %}</span></div></li>
+    {% endif %}
+    {% endfor %}
+  </ul>
+</section>
+{% endif %}
+{% endfor %}

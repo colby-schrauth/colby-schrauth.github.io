@@ -1,0 +1,12 @@
+# Playbooks shown under "playbook" in the nav, in this order.
+# Each one's chapters live in _playbooks/<slug>/, and set `playbook`, `part` and `order` in front matter.
+# `parts` lists the groupings chapters are shown under, in order.
+
+- slug: digital-marketing
+  title: Digital Marketing
+  summary: The fundamentals of getting found and measuring what works, from Search Console to Tag Manager to Ads.
+  parts:
+    - Foundations
+    - Measure
+    - Acquire
+    - Report

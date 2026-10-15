@@ -1,0 +1,98 @@
+# The résumé shown on the About page. Newest role first.
+# Each role: title, org, optional url/location, dates, an optional italic summary, and bullets.
+
+headline: Data and AI Executive · Founder, Data and AI Consultancy · Former VP of Data · Former Head of Data at Google
+
+profile:
+  - Data, AI, and business transformation executive with 15+ years building and scaling data organizations across Google, Square, Sequoia Consulting Group, and founder-led companies. Former Google Global Head of Data with experience leading global teams, supporting $2B+ product portfolios, acquisition diligence and integration, GTM, pricing, product economics, and enterprise transformation. Founded PRIORA and grew it to seven figures in 18 months, serving CEOs, CFOs, COOs, and boards across $10M–multi-billion-dollar businesses.
+  - Combines executive operating leadership with unusually deep technical fluency across modern data infrastructure and applied AI. I measure data organizations by the decisions and business outcomes they change—not the dashboards they ship.
+
+experience:
+  - title: Fractional Head of Data and AI
+    org: PRIORA (Founder)
+    url: https://priora.io
+    dates: Jan 2025 – Present
+    summary: A data infrastructure and applied-AI firm that embeds as the outsourced head of data for founders and C-suites. Clients arrive with a broken or nonexistent data function; we stand it up, build it, and run it across finance, operations, marketing, sales, and clinical teams.
+    bullets:
+      - Grew from zero to seven figures in revenue in 18 months across nine engagements, spanning founder-led SaaS and services companies ($10M–$150M revenue) to a publicly traded multi-billion-dollar enterprise. Clients include Yubico, Trainual, Rebel Athletic, Sugared + Bronzed, Hydration Room, Jude, RYSE, and Sequoia Consulting Group.
+      - Re-engaged by Sequoia Consulting Group, my former employer, weeks after leaving as VP of Data, to finish building the finance data ecosystem and onboard the incoming CDO and data team on the platform.
+      - Serve as embedded fractional CDO to CEOs, CFOs, and COOs, and present to boards. I set the data strategy and stay accountable for the decisions it produces. We launched a Membership Conversion metric at Sugared + Bronzed, followed by a ≈32% increase in average membership conversion rate (6.8% → 9.0%).
+      - Designed and built PRIORA's proprietary AI applications. Clinical charting assistance, site-selection mapping, sales and territory mapping, and staff anomaly detection. We helped replace $100k+ in third-party software contracts and cleared a backlog of 50k+ incomplete clinical charts at Hydration Room.
+      - Recruited and led a delivery team of three; authored the implementation playbook that takes a client from no data function to an executive-ready reporting layer at roughly a third of the cost of an in-house build.
+      - Own the full stack at most engagements — ingestion, governance, security, modeling, visualization, ML/AI, and activation.
+
+  - title: Vice President, Data and Analytics
+    org: Sequoia Consulting Group
+    location: San Mateo, CA
+    dates: May 2023 – Jan 2025
+    summary: Hired to turn a 23-year-old services business with highly sensitive employee and benefits data and a global client footprint into a data-driven organization.
+    bullets:
+      - Built and led a 20-person organization of managers, data engineers, and analysts; designed the performance management, promotion, compensation, and training framework it operated on — three promotions and 100% retention.
+      - Selected, procured, and deployed the company's first modern data stack (Snowflake, Fivetran, dbt, Hightouch, Metabase, GitHub) and owned the end-to-end lifecycle of enterprise data — ingestion, transformation, storage, security, and serving. Roughly 70% of licensed users active weekly, across finance, operations, service, and leadership.
+      - Rebuilt the analytics and financial operations layer for Sequoia's $50M PEO business, replacing a vendor invoicing platform with in-house data infrastructure; cut billing close from weeks to same-day, created line-item invoice visibility, and eliminated the need to add billing headcount as the business scaled.
+      - Co-authored the enterprise data security strategy. Data-level permissions, row- and column-level filtering, and masking policies fully automated with Security's IAM system as the company's first governed access model for sensitive data.
+
+  - title: Global Head of Data, Cloud Security
+    org: Google
+    location: Sunnyvale, CA
+    dates: Jun 2021 – May 2023
+    summary: Led a 12-person global, full-stack data team across the GCP Security portfolio. Promoted twice at Google in three and a half years — Analytics Lead → Analytics Team Lead → Global Head of Data.
+    bullets:
+      - Led DOJ-reviewed data diligence and integration planning across three Google acquisitions, including the $5.4B acquisition of Mandiant, assessing business context, data architecture, operating dependencies, and integration requirements.
+      - Built the end-to-end GTM analytics function for a $1B+ business (Sales, Marketing, Post-Sales) — descriptive and diagnostic reporting plus ML forecasts for bookings, revenue, and billings. Co-owned the predictions that set quota distribution and rolled-up forecasts. The performance framework I designed was adopted by every GCP product line as the monthly reporting standard to the CEO of Google Cloud.
+      - Engineered a unit-economics and product P&L pipeline that attributed cloud infrastructure, headcount, and allocated spend down to the customer level — the portfolio's first view of true product profitability. It immediately surfaced $3M+ in un-billed customer overages and gave the first quantitative link between churn and onboarding quality, which drove a re-architecture of customer onboarding around AI-assisted log parsing.
+      - Owned QBR analytics and led OKR development across the organization; supported launches including Bard in Chronicle, Crypto-mining Protection, IAM Policy Simulator, Assured Workloads, and SCC On-Demand.
+
+  - title: Analytics Lead, AMP Product & Business Strategy
+    org: Google
+    location: Sunnyvale, CA
+    dates: Jan 2020 – Jun 2021
+    bullets:
+      - Sole data practitioner for Google Kubernetes Engine ($2B annual gross revenue) and the CI/CD and DevEx portfolios; owned governance, data engineering, analytics, and data science behind all financial, product, and operational reporting.
+      - Partnered with Product and Finance on pricing and launch decisions for GKE Cluster Management Fee, Reservations, Autopilot, Windows, E2 VMs, and Cloud Code.
+      - Drove the analysis behind two major GKE pricing decisions — the $0.10/hour cluster management fee and migration to E2 VMs as the default node family — generating $50M+ in incremental revenue in year one.
+
+  - title: Analytics Team Lead, Product & Customer Success
+    org: Square
+    location: San Francisco, CA
+    dates: Aug 2016 – Jan 2020
+    summary: Promoted twice to lead Product and Customer Success analytics for Square's $100M/year eCommerce subscription business, managing a four-person team and owning the decision infrastructure behind product experimentation, FP&A, segmentation, and customer operations.
+    bullets:
+      - Engineered the pipelines, dimensional models, and BI layer for a $100M/year subscription product — the dataset behind every A/B test, FP&A model, and paid-user segmentation report for the unit.
+      - Led the migrations from Amazon Redshift to Snowflake, Zendesk to Salesforce, and crontab to Airflow, and powered the analytics behind a homegrown help center and last-chance deflection app. Instrumented federated search and a last-chance deflection tool that cut support requests by 20% with no change in paid conversion or customer sentiment.
+
+early_career:
+  dates: 2010 – 2016
+  roles:
+    - Sr. Business Value Engineer, Lithium Technologies (2014–2016) — financial modeling, account reviews, and demos that materially influenced $10M+ TCV of new, renewal, and uplift revenue.
+    - Sr. Business Analyst, 3Cinteractive (2011–2014) — analysis for the largest customers drove product optimizations worth $3.5M in incremental ARR. Promoted twice.
+    - Account Executive, ADP (2010–2011) — company-wide recognition for sales performance on a President's Club team.
+
+community:
+  - San Francisco Data School (Udemy) — built an analytics course taken by 70K+ students across 145+ countries and 30+ languages; 4.5 rating on 26K+ reviews.
+  - Instructor, General Assembly (2015–2017) — wrote and taught a custom data analytics curriculum to four cohorts (100+ students) at 90th-percentile NPS; adopted company-wide. Capstone advisor, Columbia M.S. in Applied Analytics (2017).
+  - Treasurer, Surfrider Foundation, Half Moon Bay chapter (two years) — set up banking and online donations and raised funds for ocean water testing.
+
+technology:
+  - AI Architecture (MCP, LLMs, RAG)
+  - Semantic Layers
+  - Serverless Architecture
+  - Vercel
+  - Neon/Postgres
+  - Snowflake
+  - BigQuery
+  - Redshift
+  - dbt
+  - Fivetran
+  - Hightouch
+  - Data Security & Governance (RBAC, RLS, CLS, IAM, Masking)
+  - SQL
+  - Python
+  - Salesforce
+
+education:
+  - B.A. Finance, Florida Atlantic University (2009)
+  - ML Program, General Assembly (2015)
+  - Dale Carnegie Course (2010)
+
+beyond_work: Husband and father. Surf, snowboard, half-Ironman finisher (2019). Fonts, design, and writing.

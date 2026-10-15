@@ -26,10 +26,9 @@
       <header class="site-header">
         <a class="logo" href="{{ '/' | relative_url }}" aria-label="Colby Schrauth, home">cs<span>.</span></a>
         <nav class="site-nav" aria-label="Main">
-          <a href="{{ '/articles.html' | relative_url }}"{% if page.nav == 'writing' %} aria-current="page"{% endif %}>writing</a>
-          <a href="{{ '/thoughts.html' | relative_url }}"{% if page.nav == 'thoughts' %} aria-current="page"{% endif %}>thoughts</a>
-          <a href="{{ '/scrapbook.html' | relative_url }}"{% if page.nav == 'scrapbook' %} aria-current="page"{% endif %}>scrapbook</a>
-          <a href="{{ '/about.html' | relative_url }}"{% if page.nav == 'about' %} aria-current="page"{% endif %}>about</a>
+          {%- for item in site.data.nav %}
+          <a href="{{ item.url | relative_url }}"{% if page.nav == item.key %} aria-current="page"{% endif %}>{{ item.label }}</a>
+          {%- endfor %}
           <button class="kbd-button" type="button" data-palette-open aria-label="Search the site" aria-keyshortcuts="Meta+K Control+K">⌘K</button>
         </nav>
       </header>
@@ -40,12 +39,7 @@
 
       <footer class="site-footer mono">
         <span>© {{ site.time | date: '%Y' }} colby schrauth</span>
-        <nav aria-label="Elsewhere">
-          <a href="mailto:colby.schrauth@gmail.com">email</a>
-          <a href="https://www.linkedin.com/in/colbyschrauth/">linkedin</a>
-          <a href="https://github.com/colby-schrauth">github</a>
-          <a href="{{ '/feed.xml' | relative_url }}">rss</a>
-        </nav>
+        <nav aria-label="Elsewhere">{% include social-icons.html %}</nav>
       </footer>
     </div>
 

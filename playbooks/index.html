@@ -1,0 +1,19 @@
+---
+layout: default
+title: Playbooks
+nav: playbooks
+description: Practical, step-by-step playbooks for running a business.
+---
+<header class="page-head">
+  <h1>Playbooks<span class="dot">.</span></h1>
+  <p>Practical, step-by-step guides to the fundamentals, written as I work through them.</p>
+</header>
+
+<section class="category">
+  <ul class="rows">
+    {% for book in site.data.playbooks %}
+    {% assign chapters = site.playbooks | where: "playbook", book.slug | where_exp: "c", "c.order > 0" %}
+    <li><a href="{{ '/playbooks/' | append: book.slug | append: '/' | relative_url }}"><span class="title">{{ book.title }}<span class="summary">{{ book.summary }}</span></span><span class="meta">{{ chapters.size }} chapters</span></a></li>
+    {% endfor %}
+  </ul>
+</section>

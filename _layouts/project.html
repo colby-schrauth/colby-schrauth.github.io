@@ -1,0 +1,21 @@
+---
+layout: default
+---
+<article>
+  <header class="post-head">
+    <h1>{{ page.title }}</h1>
+    <p class="meta mono muted">{{ page.years }}{% if page.role %} · {{ page.role | downcase }}{% endif %}</p>
+    {% if page.summary %}<p class="project-lede">{{ page.summary }}</p>{% endif %}
+    {% if page.links %}
+    <p class="project-links mono">
+      {% for link in page.links %}<a href="{{ link.url }}">{{ link.label }} ↗</a>{% endfor %}
+    </p>
+    {% endif %}
+  </header>
+  <div class="prose">
+{{ content }}
+  </div>
+  <nav class="pager mono" aria-label="Projects">
+    <a class="prev" href="{{ '/projects/' | relative_url }}">← all projects</a>
+  </nav>
+</article>

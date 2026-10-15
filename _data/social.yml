@@ -1,0 +1,15 @@
+# Icon links shown in the footer and on the homepage, in order.
+# `icon` must match one drawn in _includes/social-icons.html.
+# `copy` (instead of `url`) makes it a button that copies that text, e.g. an email address.
+- label: Copy email address
+  copy: colby.schrauth@gmail.com
+  icon: email
+- label: LinkedIn
+  url: https://www.linkedin.com/in/colbyschrauth/
+  icon: linkedin
+- label: GitHub
+  url: https://github.com/colby-schrauth
+  icon: github
+- label: Udemy course
+  url: https://www.udemy.com/course/learndata/
+  icon: udemy
