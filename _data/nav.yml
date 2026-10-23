@@ -8,6 +8,9 @@
 - label: Playbooks
   url: /playbooks/
   key: playbooks
+- label: Theories
+  url: /theories/
+  key: theories
 - label: Projects
   url: /projects/
   key: projects

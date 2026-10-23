@@ -1,0 +1,23 @@
+---
+layout: default
+title: Theories
+nav: theories
+description: The theories and frameworks Colby Schrauth uses to make sense of business, data and life.
+---
+<header class="page-head">
+  <h1>Theories<span class="dot">.</span></h1>
+  <p>The ideas I use to make sense of things: some are hunches I'm testing, some have hardened into frameworks.</p>
+</header>
+
+{% assign theories = site.theories | sort: "order" %}
+<section class="category">
+  {% if theories.size > 0 %}
+  <ul class="rows">
+    {% for theory in theories %}
+    <li><a href="{{ theory.url | relative_url }}"><span class="title">{{ theory.title }}{% if theory.summary %}<span class="summary">{{ theory.summary }}</span>{% endif %}</span><span class="meta">{{ theory.kind | default: 'theory' | downcase }}</span></a></li>
+    {% endfor %}
+  </ul>
+  {% else %}
+  <p class="muted">The first ones are being written.</p>
+  {% endif %}
+</section>

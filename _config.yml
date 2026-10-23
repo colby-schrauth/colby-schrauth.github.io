@@ -19,6 +19,9 @@ collections:
   playbooks:
     output: true # _playbooks/<playbook>/<chapter>.md -> /playbooks/<playbook>/<chapter>.html
     permalink: /playbooks/:path:output_ext
+  theories:
+    output: true # _theories/<name>.md -> /theories/<name>.html
+    permalink: /theories/:name:output_ext
 
 defaults:
   - scope:
@@ -38,6 +41,12 @@ defaults:
     values:
       layout: playbook
       nav: playbooks
+  - scope:
+      path: ""
+      type: theories
+    values:
+      layout: theory
+      nav: theories
 
 feed:
   path: feed.xml

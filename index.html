@@ -10,16 +10,3 @@ description: Colby Schrauth is a Fractional Head of Data and the owner of PRIORA
   <p class="hint mono">press <kbd>⌘</kbd> <kbd>K</kbd> to jump anywhere →</p>
 </section>
 
-<section class="section">
-  <div class="section-head">
-    <h2>Recent writing</h2>
-    <a class="mono" href="{{ '/articles.html' | relative_url }}">all writing →</a>
-  </div>
-  {% assign recent = site.posts | concat: site.thoughts | sort: "date" | reverse %}
-  <ul class="rows">
-    {% for item in recent limit: 5 %}
-    {% if item.collection == "thoughts" %}{% assign href = '/thoughts.html#' | append: item.slug %}{% assign kind = 'thought' %}{% else %}{% assign href = item.url %}{% assign kind = item.category | default: 'article' | downcase %}{% endif %}
-    <li><a href="{{ href | relative_url }}"><span class="title">{{ item.title }}</span><span class="meta">{{ kind }} · {{ item.date | date: "%b %-d, %Y" | downcase }}</span></a></li>
-    {% endfor %}
-  </ul>
-</section>

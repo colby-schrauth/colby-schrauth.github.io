@@ -29,8 +29,8 @@
           {%- for item in site.data.nav %}
           <a href="{{ item.url | relative_url }}"{% if page.nav == item.key %} aria-current="page"{% endif %}>{{ item.label }}</a>
           {%- endfor %}
-          <button class="kbd-button" type="button" data-palette-open aria-label="Search the site" aria-keyshortcuts="Meta+K Control+K">⌘K</button>
         </nav>
+        <button class="kbd-button" type="button" data-palette-open aria-label="Search the site" aria-keyshortcuts="Meta+K Control+K">⌘K</button>
       </header>
 
       <main id="main">

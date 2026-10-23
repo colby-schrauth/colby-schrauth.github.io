@@ -14,6 +14,9 @@
   {%- for project in site.projects %},
   {"title": {{ project.title | jsonify }}, "kind": "project", "url": {{ project.url | relative_url | jsonify }}}
   {%- endfor %}
+  {%- for theory in site.theories %},
+  {"title": {{ theory.title | jsonify }}, "kind": {{ theory.kind | default: 'theory' | downcase | jsonify }}, "url": {{ theory.url | relative_url | jsonify }}}
+  {%- endfor %}
   {%- for chapter in site.playbooks %}
   {%- assign book = site.data.playbooks | where: "slug", chapter.playbook | first %},
   {"title": {{ chapter.title | jsonify }}, "kind": {{ book.title | downcase | jsonify }}, "url": {{ chapter.url | replace: 'index.html', '' | relative_url | jsonify }}}

@@ -1,0 +1,16 @@
+---
+layout: default
+---
+<article>
+  <header class="post-head">
+    <h1>{{ page.title }}</h1>
+    <p class="meta mono muted">{{ page.kind | default: 'theory' | downcase }}{% if page.date %} · {{ page.date | date: '%B %Y' | downcase }}{% endif %}</p>
+    {% if page.summary %}<p class="project-lede">{{ page.summary }}</p>{% endif %}
+  </header>
+  <div class="prose">
+{{ content }}
+  </div>
+  <nav class="pager mono" aria-label="Theories">
+    <a class="prev" href="{{ '/theories/' | relative_url }}">← all theories</a>
+  </nav>
+</article>
