@@ -114,3 +114,10 @@
     });
   });
 })();
+
+// Links to other sites open in a new tab.
+document.querySelectorAll('a[href^="http"]').forEach((a) => {
+  if (a.host === location.host) return;
+  a.target = '_blank';
+  a.rel = 'noopener';
+});
