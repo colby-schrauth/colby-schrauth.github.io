@@ -12,13 +12,16 @@ permalink: /blog/:title.html
 
 collections:
   thoughts:
-    output: false # thoughts only appear on thoughts.html, not as their own pages
+    output: false # notes only appear in the Notes section of the Writing page, not as their own pages
   projects:
     output: true # _projects/<name>.md -> /projects/<name>.html
     permalink: /projects/:name:output_ext
   playbooks:
     output: true # _playbooks/<playbook>/<chapter>.md -> /playbooks/<playbook>/<chapter>.html
     permalink: /playbooks/:path:output_ext
+  frameworks:
+    output: true # _frameworks/<name>.md -> /frameworks/<name>.html
+    permalink: /frameworks/:name:output_ext
   theories:
     output: true # _theories/<name>.md -> /theories/<name>.html
     permalink: /theories/:name:output_ext
@@ -45,14 +48,23 @@ defaults:
       path: ""
       type: theories
     values:
-      layout: theory
+      layout: entry
       nav: theories
+      kind: theory
+  - scope:
+      path: ""
+      type: frameworks
+    values:
+      layout: entry
+      nav: frameworks
+      kind: framework
 
 feed:
   path: feed.xml
 
 exclude:
   - README.md
+  - STYLE.md
   - Gemfile
   - Gemfile.lock
   - bin

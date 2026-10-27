@@ -8,18 +8,15 @@
 - label: Playbooks
   url: /playbooks/
   key: playbooks
+- label: Frameworks
+  url: /frameworks/
+  key: frameworks
 - label: Theories
   url: /theories/
   key: theories
 - label: Projects
   url: /projects/
   key: projects
-- label: Notes
-  url: /thoughts.html
-  key: thoughts
-- label: Toolkit
-  url: /toolkit.html
-  key: toolkit
 - label: Favorites
   url: /scrapbook.html
   key: scrapbook

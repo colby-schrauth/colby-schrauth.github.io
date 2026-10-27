@@ -1,20 +1,17 @@
 ---
-layout: default
-title: Notes
-nav: thoughts
-description: Short thoughts, written down as they come.
+layout: null
+permalink: /thoughts.html
+sitemap: false
 ---
-<header class="page-head">
-  <h1>Thinking out loud<span class="dot">.</span></h1>
-  <p>Short ideas, written down as they come.</p>
-</header>
-{% assign thoughts = site.thoughts | sort: "date" | reverse %}
-<div class="measure">
-  {% for thought in thoughts %}
-  <article class="thought" id="{{ thought.slug }}">
-    <h2><a href="#{{ thought.slug }}">{{ thought.title }}</a></h2>
-    <p class="meta mono muted">{{ thought.date | date: "%B %-d, %Y" | downcase }}{% if thought.location %} · {{ thought.location | downcase }}{% endif %}</p>
-    {{ thought.content }}
-  </article>
-  {% endfor %}
-</div>
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Moved</title>
+    <link rel="canonical" href="{{ '/articles.html' | absolute_url }}">
+    <meta name="robots" content="noindex">
+    <script>location.replace({{ '/articles.html' | relative_url | jsonify }} + (location.hash || '#notes'));</script>
+    <meta http-equiv="refresh" content="0; url={{ '/articles.html' | relative_url }}#notes">
+  </head>
+  <body><p>This page moved to <a href="{{ '/articles.html' | relative_url }}#notes">here</a>.</p></body>
+</html>

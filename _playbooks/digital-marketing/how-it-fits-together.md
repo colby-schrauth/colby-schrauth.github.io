@@ -1,5 +1,5 @@
 ---
-title: How the pieces fit together
+title: How the Pieces Fit Together
 playbook: digital-marketing
 part: Foundations
 order: 1

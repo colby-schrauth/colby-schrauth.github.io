@@ -14,7 +14,7 @@ description: Things Colby Schrauth has built, started and helped run.
   {% for project in projects %}
   <li class="project">
     <a href="{{ project.url | relative_url }}">
-      <p class="project-meta mono">{{ project.years }}{% if project.role %} · {{ project.role }}{% endif %}</p>
+      <p class="project-meta byline">{{ project.years }}{% if project.role %} · {{ project.role }}{% endif %}</p>
       <h2>{{ project.title }}</h2>
       <p class="project-summary">{{ project.summary }}</p>
       {% if project.tags %}<ul class="project-tags">{% for tag in project.tags %}<li>{{ tag }}</li>{% endfor %}</ul>{% endif %}

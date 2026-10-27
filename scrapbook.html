@@ -2,11 +2,11 @@
 layout: default
 title: Favorites
 nav: scrapbook
-description: Favorite books, shows, podcasts, quotes and photos.
+description: Favorite books, shows, podcasts and quotes, the tools Colby Schrauth uses day to day, and a few photos.
 ---
 <header class="page-head">
   <h1>Things I love<span class="dot">.</span></h1>
-  <p>Favorite books, shows, podcasts and quotes, plus a few photos.</p>
+  <p>Favorite books, shows, podcasts and quotes, the tools I use day to day, plus a few photos.</p>
 </header>
 
 <section class="category">
@@ -15,6 +15,24 @@ description: Favorite books, shows, podcasts, quotes and photos.
     <li><a href="{{ '/lists/books.html' | relative_url }}"><span class="title">Books</span><span class="meta">{{ site.data.books.items.size }} picks</span></a></li>
     <li><a href="{{ '/lists/shows.html' | relative_url }}"><span class="title">Shows</span><span class="meta">{{ site.data.shows.items.size }} picks</span></a></li>
   </ul>
+</section>
+
+<section class="category" id="toolkit">
+  <div class="section-head"><h2>Toolkit</h2></div>
+  {%- for group in site.data.toolkit %}
+  {%- if group.tools.size > 0 %}
+  <h3 class="group-label">{{ group.section }}</h3>
+  <ul class="rows">
+    {%- for tool in group.tools %}
+    {%- if tool.url %}{% assign host = tool.url | split: '/' %}
+    <li><a href="{{ tool.url }}"><span class="title">{{ tool.name }}{% if tool.why %}<span class="summary">{{ tool.why }}</span>{% endif %}</span><span class="meta">{{ host[2] | remove: 'www.' }} ↗</span></a></li>
+    {%- else %}
+    <li><div class="row"><span class="title">{{ tool.name }}{% if tool.why %}<span class="summary">{{ tool.why }}</span>{% endif %}</span></div></li>
+    {%- endif %}
+    {%- endfor %}
+  </ul>
+  {%- endif %}
+  {%- endfor %}
 </section>
 
 <section class="category">
@@ -30,11 +48,11 @@ description: Favorite books, shows, podcasts, quotes and photos.
   <div class="quotes">
     <figure class="quote">
       <blockquote>“All of humanity’s problems stem from man’s inability to sit quietly in a room alone.”</blockquote>
-      <figcaption class="mono muted">blaise pascal</figcaption>
+      <figcaption class="mono muted">Blaise Pascal</figcaption>
     </figure>
     <figure class="quote">
       <blockquote>“There are so many people working so hard and achieving so little.”</blockquote>
-      <figcaption class="mono muted">andy grove</figcaption>
+      <figcaption class="mono muted">Andy Grove</figcaption>
     </figure>
   </div>
 </section>

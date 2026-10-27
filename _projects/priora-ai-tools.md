@@ -1,5 +1,5 @@
 ---
-title: PRIORA's AI tools
+title: PRIORA's AI Tools
 order: 1
 years: 2025 – present
 role: Designer & builder

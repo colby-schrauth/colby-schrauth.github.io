@@ -1,5 +1,5 @@
 ---
-title: Campaign tracking with UTMs
+title: Campaign Tracking with UTMs
 playbook: digital-marketing
 part: Foundations
 order: 2

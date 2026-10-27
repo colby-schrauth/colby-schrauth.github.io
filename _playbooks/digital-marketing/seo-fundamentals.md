@@ -1,5 +1,5 @@
 ---
-title: SEO fundamentals
+title: SEO Fundamentals
 playbook: digital-marketing
 part: Acquire
 order: 7

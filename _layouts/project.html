@@ -4,7 +4,7 @@ layout: default
 <article>
   <header class="post-head">
     <h1>{{ page.title }}</h1>
-    <p class="meta mono muted">{{ page.years }}{% if page.role %} · {{ page.role | downcase }}{% endif %}</p>
+    <p class="byline">{{ page.years }}{% if page.role %} · {{ page.role }}{% endif %}</p>
     {% if page.summary %}<p class="project-lede">{{ page.summary }}</p>{% endif %}
     {% if page.links %}
     <p class="project-links mono">
@@ -16,6 +16,6 @@ layout: default
 {{ content }}
   </div>
   <nav class="pager mono" aria-label="Projects">
-    <a class="prev" href="{{ '/projects/' | relative_url }}">← all projects</a>
+    <a class="prev" href="{{ '/projects/' | relative_url }}">← All projects</a>
   </nav>
 </article>

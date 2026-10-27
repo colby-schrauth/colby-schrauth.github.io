@@ -121,3 +121,56 @@ document.querySelectorAll('a[href^="http"]').forEach((a) => {
   a.target = '_blank';
   a.rel = 'noopener';
 });
+
+// Glosses: tap a dotted term to open its definition inline (see STYLE.md).
+document.querySelectorAll('.gloss-term').forEach((term) => {
+  term.addEventListener('click', () => {
+    const open = term.parentElement.classList.toggle('open');
+    term.setAttribute('aria-expanded', open);
+  });
+});
+
+// Night mode: the toggle flips <html data-theme="dark"> and remembers the choice.
+(function () {
+  const root = document.documentElement;
+  const meta = document.querySelector('meta[name="theme-color"]');
+  const sync = () => {
+    const dark = root.dataset.theme === 'dark';
+    document.querySelectorAll('[data-theme-toggle]').forEach((b) => b.setAttribute('aria-pressed', dark));
+    if (meta) meta.content = dark ? '#25272A' : '#F6F4EF';
+  };
+  document.querySelectorAll('[data-theme-toggle]').forEach((b) => b.addEventListener('click', () => {
+    const dark = root.dataset.theme !== 'dark';
+    if (dark) root.dataset.theme = 'dark'; else delete root.dataset.theme;
+    try { localStorage.setItem('theme', dark ? 'dark' : 'light'); } catch (e) {}
+    sync();
+  }));
+  sync();
+})();
+
+// Matrix views: tabs that swap the example inside each box (see STYLE.md).
+document.querySelectorAll('[data-views]').forEach((fig) => {
+  const tabs = [...fig.querySelectorAll('.matrix-tab')];
+  const show = (n) => {
+    tabs.forEach((t, i) => {
+      t.setAttribute('aria-selected', i === n);
+      t.tabIndex = i === n ? 0 : -1;
+    });
+    fig.querySelectorAll('.quad-view').forEach((v) => {
+      const on = Number(v.dataset.view) === n;
+      v.classList.toggle('is-active', on);
+      v.setAttribute('aria-hidden', !on);
+    });
+  };
+  tabs.forEach((t, i) => {
+    t.addEventListener('click', () => show(i));
+    t.addEventListener('keydown', (e) => {
+      const step = { ArrowRight: 1, ArrowDown: 1, ArrowLeft: -1, ArrowUp: -1 }[e.key];
+      if (!step) return;
+      e.preventDefault();
+      const n = (i + step + tabs.length) % tabs.length;
+      show(n);
+      tabs[n].focus();
+    });
+  });
+});

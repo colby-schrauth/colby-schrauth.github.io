@@ -1,0 +1,75 @@
+{%- comment -%}
+  The matrix: where things sit on two axes (see STYLE.md).
+  Usage: {% include matrix.html id="map" %}, with page.matrices.map defined in front matter.
+  `cols` and `rows` are the two sides of each axis ("Name" or "Name | small note").
+  `cells` run left to right, top to bottom. A cell is a map (name, eg, act) or a placed one (name, causes).
+  A cause is "Name | share" or "Name | share | can't"; quadrants named in `lit` are drawn in brass.
+  Optional `views`: tabs that swap each box's eg/act, keeping the box names fixed. The first view is the
+  general one, shown as one large tab; the rest sit underneath as examples. Each view has a
+  `label` and `cells` (eg, act) in the same order as `cells`.
+  Each `act` sits under a small label, "What it leads to" unless `act_label` says otherwise.
+{%- endcomment -%}
+{%- assign m = page.matrices[include.id] -%}
+{%- assign cant_seen = false -%}
+{%- assign act_label = m.act_label | default: "What it leads to" -%}
+<figure class="figure matrix-figure"{% if m.views %} data-views{% endif %}>
+  <figcaption>{{ m.caption }}</figcaption>
+  {%- if m.views %}
+  <div class="matrix-tabs" role="tablist" aria-label="The theory and examples">
+    {%- assign first = m.views | first %}
+    <button type="button" role="tab" class="matrix-tab matrix-tab-main" data-view="0" aria-selected="true">{{ first.label }}</button>
+    {%- if m.views.size > 1 %}
+    <div class="matrix-examples" role="presentation">
+      <span class="matrix-examples-label" aria-hidden="true">Examples</span>
+      <div class="matrix-examples-row" role="presentation">
+        {%- for view in m.views offset: 1 %}
+        <button type="button" role="tab" class="matrix-tab" data-view="{{ forloop.index }}" aria-selected="false" tabindex="-1">{{ view.label }}</button>
+        {%- endfor %}
+      </div>
+    </div>
+    {%- endif %}
+  </div>
+  {%- endif %}
+  <div class="matrix" role="group" aria-label="{{ m.caption | escape }}">
+    <span></span>
+    {%- for col in m.cols %}{% assign parts = col | split: " | " %}
+    <span class="matrix-axis matrix-col">{{ parts[0] | strip }}{% if parts[1] %}<small>{{ parts[1] }}</small>{% endif %}</span>
+    {%- endfor %}
+    {%- for row in m.rows %}{% assign r = forloop.index0 %}
+    <span class="matrix-axis matrix-row">{{ row }}</span>
+    {%- for col in m.cols %}{% assign i = r | times: m.cols.size | plus: forloop.index0 %}{% assign cell = m.cells[i] %}
+    <div class="quad{% if m.lit contains cell.name %} lit{% endif %}" style="--i: {{ i }}">
+      {%- if cell.causes %}
+      <span class="quad-tag">{{ cell.name }}</span>
+      {%- for cause in cell.causes %}{% assign c = cause | split: " | " %}{% assign share = c[1] | strip | remove: "%" | plus: 0 %}
+      {%- assign cant = false %}{% if c[2] %}{% assign cant = true %}{% assign cant_seen = true %}{% endif %}
+      <span class="cause{% if cant %} cant{% endif %}"><i aria-hidden="true"></i>{{ c[0] | strip }}{% if cant %}<span class="sr"> (can't act on it)</span>{% endif %}</span>
+      <span class="cause-meter"><span class="cause-bar"><span style="width: {{ share }}%"></span></span>{{ share }}%</span>
+      {%- endfor %}
+      {%- elsif m.views %}
+      <span class="quad-name">{{ cell.name }}</span>
+      <div class="quad-views">
+        {%- for view in m.views %}{% assign v = view.cells[i] %}
+        <div class="quad-view{% if forloop.first %} is-active{% endif %}" data-view="{{ forloop.index0 }}"{% unless forloop.first %} aria-hidden="true"{% endunless %}>
+          {%- if v.eg %}<span class="quad-eg">{{ v.eg }}</span>{% endif %}
+          {%- if v.act %}<span class="quad-act"><span class="quad-act-label">{{ act_label }}</span>{{ v.act }}</span>{% endif %}
+        </div>
+        {%- endfor %}
+      </div>
+      {%- else %}
+      <span class="quad-name">{{ cell.name }}</span>
+      {%- if cell.eg %}<span class="quad-eg">{{ cell.eg }}</span>{% endif %}
+      {%- if cell.act %}<span class="quad-act"><span class="quad-act-label">{{ act_label }}</span>{{ cell.act }}</span>{% endif %}
+      {%- endif %}
+    </div>
+    {%- endfor %}
+    {%- endfor %}
+  </div>
+  {%- if cant_seen %}
+  <ul class="matrix-legend" aria-hidden="true">
+    <li><span class="cause"><i></i></span>you can act on it</li>
+    <li><span class="cause cant"><i></i></span>you can't</li>
+  </ul>
+  {%- endif %}
+  {%- if m.note %}<p class="figure-note">{{ m.note }}</p>{% endif %}
+</figure>

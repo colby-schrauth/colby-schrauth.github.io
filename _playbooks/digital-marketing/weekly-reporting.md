@@ -1,5 +1,5 @@
 ---
-title: Weekly reporting
+title: Weekly Reporting
 playbook: digital-marketing
 part: Report
 order: 9

@@ -1,0 +1,43 @@
+{%- comment -%}
+  The trace: who can see the specimen, moment by moment (see STYLE.md).
+  Usage: {% include trace.html id="browser" %}, with page.traces.browser defined in front matter.
+  Each row's `see` is one state per moment: on, off, lost or back.
+{%- endcomment -%}
+{%- assign t = page.traces[include.id] -%}
+{%- assign live = "on back" -%}
+<figure class="figure trace" style="--moments: {{ t.moments.size }}">
+  <figcaption>{{ t.caption }}</figcaption>
+  <div class="figure-scroll">
+    <div class="trace-grid" role="table" aria-label="{{ t.caption | escape }}">
+      <div class="trace-row" role="row">
+        <span class="trace-label" role="columnheader"><span class="sr">System</span></span>
+        {%- for m in t.moments %}
+        <span class="trace-moment" role="columnheader"><b>{{ forloop.index }}</b>{{ m }}</span>
+        {%- endfor %}
+      </div>
+      {%- for row in t.rows %}
+      {%- assign cells = row.see | split: " " %}
+      <div class="trace-row" role="row">
+        <span class="trace-label" role="rowheader">{{ row.system }}</span>
+        {%- for c in cells %}
+        {%- assign i = forloop.index0 %}{% assign n = i | plus: 1 %}{% assign p = i | minus: 1 %}
+        {%- assign prev = "" %}{% if i > 0 %}{% assign prev = cells[p] %}{% endif %}
+        {%- assign next = "" %}{% if n < cells.size %}{% assign next = cells[n] %}{% endif %}
+        {%- assign classes = c %}
+        {%- if live contains c and prev != "" and live contains prev %}{% assign classes = classes | append: " in" %}{% endif %}
+        {%- if live contains c and next != "" and live contains next %}{% assign classes = classes | append: " out" %}{% endif %}
+        {%- case c %}{% when "on" %}{% assign said = "sees it" %}{% when "lost" %}{% assign said = "loses it" %}{% when "back" %}{% assign said = "learns it later, because it's sent back" %}{% else %}{% assign said = "can't see it" %}{% endcase %}
+        <span class="trace-cell {{ classes }}" role="cell"><i aria-hidden="true"></i><span class="sr">{{ said }}</span></span>
+        {%- endfor %}
+      </div>
+      {%- endfor %}
+    </div>
+  </div>
+  <ul class="trace-legend" aria-hidden="true">
+    <li><span class="trace-cell on"><i></i></span>sees it</li>
+    <li><span class="trace-cell off"><i></i></span>can't see it</li>
+    <li><span class="trace-cell lost"><i></i></span>loses it</li>
+    <li><span class="trace-cell back"><i></i></span>learns it later</li>
+  </ul>
+  {%- if t.note %}<p class="figure-note">{{ t.note }}</p>{% endif %}
+</figure>

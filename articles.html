@@ -2,11 +2,11 @@
 layout: default
 title: Writing
 nav: writing
-description: Writing on data, work and money.
+description: Writing on data, work and money, plus short notes written down as they come.
 ---
 <header class="page-head">
   <h1>Writing<span class="dot">.</span></h1>
-  <p>Longer pieces on data, work and money, here and around the web.</p>
+  <p>Longer pieces on data, work and money, here and around the web, plus short notes written down as they come.</p>
 </header>
 {% for category in site.data.articles %}
 <section class="category">
@@ -14,7 +14,7 @@ description: Writing on data, work and money.
   <ul class="rows">
     {% assign posts = site.posts | where: "category", category.name %}
     {% for post in posts %}
-    <li><a href="{{ post.url | relative_url }}"><span class="title">{{ post.title }}</span><span class="meta">{{ post.date | date: "%b %Y" | downcase }}</span></a></li>
+    <li><a href="{{ post.url | relative_url }}"><span class="title">{{ post.title }}</span><span class="meta">{{ post.date | date: "%b %Y" }}</span></a></li>
     {% endfor %}
     {% for link in category.links %}
     {% assign host = link.url | split: '/' %}
@@ -23,3 +23,17 @@ description: Writing on data, work and money.
   </ul>
 </section>
 {% endfor %}
+
+<section class="category" id="notes">
+  <div class="section-head"><h2>Notes</h2></div>
+  {% assign thoughts = site.thoughts | sort: "date" | reverse %}
+  <div class="measure">
+    {% for thought in thoughts %}
+    <article class="thought" id="{{ thought.slug }}">
+      <h3><a href="#{{ thought.slug }}">{{ thought.title }}</a></h3>
+      <p class="byline">{{ thought.date | date: "%B %-d, %Y" }}{% if thought.location %} · {{ thought.location }}{% endif %}</p>
+      {{ thought.content }}
+    </article>
+    {% endfor %}
+  </div>
+</section>

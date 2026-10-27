@@ -1,0 +1,21 @@
+{%- comment -%}
+  The schematic: how the pieces connect (see STYLE.md).
+  Usage: {% include schematic.html id="ladder" %}, with page.schematics.ladder defined in front matter.
+  A node is "Name" or "Name | small note"; names listed in `lit` are drawn in brass.
+{%- endcomment -%}
+{%- assign s = page.schematics[include.id] -%}
+<figure class="figure schematic">
+  <figcaption>{{ s.caption }}</figcaption>
+  <ol class="schematic-stages">
+    {%- for stage in s.stages %}
+    <li class="schematic-stage">
+      <span class="stage-name">{{ stage.name }}</span>
+      {%- for node in stage.nodes %}
+      {%- assign parts = node | split: " | " %}{% assign name = parts[0] | strip %}
+      <span class="node{% if s.lit contains name %} lit{% endif %}">{{ name }}{% if parts[1] %}<small>{{ parts[1] }}</small>{% endif %}</span>
+      {%- endfor %}
+    </li>
+    {%- endfor %}
+  </ol>
+  {%- if s.note %}<p class="figure-note">{{ s.note }}</p>{% endif %}
+</figure>

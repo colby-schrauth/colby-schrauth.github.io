@@ -4,6 +4,8 @@
   {%- for item in site.data.nav %}
   {"title": {{ item.label | jsonify }}, "kind": "page", "url": {{ item.url | relative_url | jsonify }}},
   {%- endfor %}
+  {"title": "Notes", "kind": "writing", "url": {{ '/articles.html#notes' | relative_url | jsonify }}},
+  {"title": "Toolkit", "kind": "favorites", "url": {{ '/scrapbook.html#toolkit' | relative_url | jsonify }}},
   {"title": "Résumé", "kind": "about", "url": {{ '/about.html#resume' | relative_url | jsonify }}},
   {"title": "Résumé (PDF)", "kind": "download", "url": {{ '/assets/colby-schrauth-resume.pdf' | relative_url | jsonify }}},
   {"title": "Favorite books", "kind": "list", "url": {{ '/lists/books.html' | relative_url | jsonify }}},
@@ -14,15 +16,16 @@
   {%- for project in site.projects %},
   {"title": {{ project.title | jsonify }}, "kind": "project", "url": {{ project.url | relative_url | jsonify }}}
   {%- endfor %}
-  {%- for theory in site.theories %},
-  {"title": {{ theory.title | jsonify }}, "kind": {{ theory.kind | default: 'theory' | downcase | jsonify }}, "url": {{ theory.url | relative_url | jsonify }}}
+  {%- assign ideas = site.frameworks | concat: site.theories %}
+  {%- for idea in ideas %},
+  {"title": {{ idea.title | jsonify }}, "kind": {{ idea.kind | jsonify }}, "url": {{ idea.url | relative_url | jsonify }}}
   {%- endfor %}
   {%- for chapter in site.playbooks %}
   {%- assign book = site.data.playbooks | where: "slug", chapter.playbook | first %},
   {"title": {{ chapter.title | jsonify }}, "kind": {{ book.title | downcase | jsonify }}, "url": {{ chapter.url | replace: 'index.html', '' | relative_url | jsonify }}}
   {%- endfor %}
   {%- for thought in site.thoughts %},
-  {"title": {{ thought.title | jsonify }}, "kind": "thought", "url": {{ '/thoughts.html#' | append: thought.slug | relative_url | jsonify }}}
+  {"title": {{ thought.title | jsonify }}, "kind": "thought", "url": {{ '/articles.html#' | append: thought.slug | relative_url | jsonify }}}
   {%- endfor %}
   {%- for category in site.data.articles %}{% for link in category.links %},
   {"title": {{ link.title | jsonify }}, "kind": {{ category.name | downcase | append: ' ↗' | jsonify }}, "url": {{ link.url | jsonify }}}

@@ -1,4 +1,4 @@
-# The Toolkit page: the tools I use, grouped into sections, in order.
+# The Toolkit section of the Favorites page: the tools I use, grouped into sections, in order.
 # Each tool has a `name`, an optional `url`, and `why` (one line on what I use it for).
 # Sections with no tools yet are hidden, so fill in the empty ones whenever.
 
@@ -28,6 +28,6 @@
     - name: Claude Code
       url: https://claude.com/claude-code
       why: Helps design and build it.
-    - name: Newsreader & IBM Plex Mono
+    - name: Newsreader & IBM Plex
       url: https://fonts.google.com/specimen/Newsreader
-      why: The two typefaces, for reading and for labels.
+      why: "The typefaces: Newsreader for reading, Plex Sans for labels and figures, Plex Mono for code."
