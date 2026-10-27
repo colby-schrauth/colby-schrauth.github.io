@@ -2,7 +2,7 @@
 title: Google Ads
 playbook: digital-marketing
 part: Acquire
-order: 8
+order: 10
 status: outline
 description: Pay to show up for the searches that matter, without wasting the budget.
 ---

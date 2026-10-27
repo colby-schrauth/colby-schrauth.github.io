@@ -2,7 +2,7 @@
 title: Weekly Reporting
 playbook: digital-marketing
 part: Report
-order: 9
+order: 11
 status: outline
 description: One page, checked once a week, that tells you whether marketing is working.
 ---

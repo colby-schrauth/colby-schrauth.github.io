@@ -2,7 +2,7 @@
 title: Conversion Tracking
 playbook: digital-marketing
 part: Measure
-order: 6
+order: 7
 status: outline
 description: Decide what counts as a win, a lead, call or sale, and track it the same way everywhere.
 ---

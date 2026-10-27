@@ -2,7 +2,7 @@
 title: SEO Fundamentals
 playbook: digital-marketing
 part: Acquire
-order: 7
+order: 9
 status: outline
 description: The few things that actually move rankings for a small business site.
 ---
