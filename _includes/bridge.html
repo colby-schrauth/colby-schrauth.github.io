@@ -1,0 +1,28 @@
+{%- comment -%}
+  The bridge: how a total moved from one value to another, one step at a time (see STYLE.md).
+  Usage: {% include bridge.html id="swap" %}, with page.bridges.swap defined in front matter.
+  `start` and `end` are {label, value, show}; each step is {label, value, show} where value is the
+  change (negative for a drop). `floor` and `ceiling` set the visible range; the step named in `lit`
+  is drawn in brass.
+{%- endcomment -%}
+{%- assign b = page.bridges[include.id] -%}
+{%- assign span = b.ceiling | minus: b.floor -%}
+<figure class="figure bridge-figure">
+  <figcaption>{{ b.caption }}</figcaption>
+  <div class="bridge" role="table" aria-label="{{ b.caption | escape }}">
+    {%- assign w = b.start.value | minus: b.floor | divided_by: span | times: 100 %}
+    <div class="bridge-row total" role="row"><span class="bridge-label" role="rowheader">{{ b.start.label }}</span><span class="bridge-track" role="cell"><i style="left: 0; width: {{ w }}%"></i></span><span class="bridge-value" role="cell">{{ b.start.show }}</span></div>
+    {%- assign level = b.start.value %}
+    {%- for step in b.steps %}
+    {%- assign next = level | plus: step.value %}
+    {%- if step.value < 0 %}{% assign lo = next %}{% assign size = 0 | minus: step.value %}{% else %}{% assign lo = level %}{% assign size = step.value %}{% endif %}
+    {%- assign left = lo | minus: b.floor | divided_by: span | times: 100 %}
+    {%- assign width = size | divided_by: span | times: 100 %}
+    <div class="bridge-row step{% if step.value < 0 %} down{% else %} up{% endif %}{% if b.lit == step.label %} lit{% endif %}" role="row"><span class="bridge-label" role="rowheader">{{ step.label }}</span><span class="bridge-track" role="cell"><i style="left: {{ left }}%; width: {{ width }}%"></i></span><span class="bridge-value" role="cell">{{ step.show }}</span></div>
+    {%- assign level = next %}
+    {%- endfor %}
+    {%- assign w = b.end.value | minus: b.floor | divided_by: span | times: 100 %}
+    <div class="bridge-row total" role="row"><span class="bridge-label" role="rowheader">{{ b.end.label }}</span><span class="bridge-track" role="cell"><i style="left: 0; width: {{ w }}%"></i></span><span class="bridge-value" role="cell">{{ b.end.show }}</span></div>
+  </div>
+  {%- if b.note %}<p class="figure-note">{{ b.note }}</p>{% endif %}
+</figure>

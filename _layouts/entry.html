@@ -1,8 +1,16 @@
 ---
 layout: default
 ---
-{%- comment -%} One theory or framework. `kind` and `nav` come from the collection defaults in _config.yml. {%- endcomment -%}
-<article>
+{%- comment -%}
+  One theory or framework. `kind` and `nav` come from the collection defaults in _config.yml.
+  The "On this page" list is filled in from the headings by js/site.js.
+{%- endcomment -%}
+<div class="entry">
+<aside class="entry-toc" aria-label="On this page" hidden>
+  <p class="toc-title">On this page</p>
+  <ol data-toc></ol>
+</aside>
+<article class="entry-body">
   <header class="post-head">
     <h1>{{ page.title }}</h1>
     <p class="byline">{{ page.kind | capitalize }}{% if page.date %} · {{ page.date | date: '%B %Y' }}{% endif %}</p>
@@ -14,3 +22,4 @@ layout: default
     <a class="prev" href="{{ '/' | append: page.nav | append: '/' | relative_url }}">← All {{ page.nav }}</a>
   </nav>
 </article>
+</div>

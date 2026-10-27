@@ -1,0 +1,19 @@
+{%- comment -%}
+  Tabs for a figure with `views` (see STYLE.md): the first view is one large tab, the rest sit
+  underneath as examples. Usage: {% include figure-tabs.html views=m.views %}. js/site.js wires them up.
+{%- endcomment -%}
+{%- assign views = include.views -%}
+<div class="matrix-tabs" role="tablist" aria-label="The general view and examples">
+  {%- assign first = views | first %}
+  <button type="button" role="tab" class="matrix-tab matrix-tab-main" data-view="0" aria-selected="true">{{ first.label }}</button>
+  {%- if views.size > 1 %}
+  <div class="matrix-examples" role="presentation">
+    <span class="matrix-examples-label" aria-hidden="true">Examples</span>
+    <div class="matrix-examples-row" role="presentation">
+      {%- for view in views offset: 1 %}
+      <button type="button" role="tab" class="matrix-tab" data-view="{{ forloop.index }}" aria-selected="false" tabindex="-1">{{ view.label }}</button>
+      {%- endfor %}
+    </div>
+  </div>
+  {%- endif %}
+</div>

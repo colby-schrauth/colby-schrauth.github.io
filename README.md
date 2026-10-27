@@ -4,7 +4,7 @@ Built with [Jekyll](https://jekyllrb.com) on GitHub Pages: push to `master` and 
 
 ## Writing
 
-Everything is written and illustrated in the house style in [STYLE.md](STYLE.md): the voice, the structure of a chapter, and the four kinds of figure (traces, schematics, matrices and ledgers).
+Everything is written and illustrated in the house style in [STYLE.md](STYLE.md): the voice, the structure of a chapter, and the six kinds of figure (traces, schematics, matrices, grids, bridges and ledgers).
 
 **A note** (short, shows in the Notes section of the Writing page):
 

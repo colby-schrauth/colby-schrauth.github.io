@@ -139,7 +139,7 @@ The two together mean the same event gets opposite explanations depending on who
 
 ## A framework inside it: the cause matrix
 
-Applied to a missed business target, the four boxes become four moves. **Fix and recover** a one-time internal cause (a launch slip). **Explain and re-phase** a one-time external one (seasonality). **Change the plan** for a lasting internal one (pricing). **Reset the target** for a lasting external one (a new competitor). Short name: *fix, re-phase, change, reset*.
+Applied to a missed business target, the four boxes become four moves. **Fix and recover** a one-time internal cause (a launch slip). **Explain and re-phase** a one-time external one (seasonality). **Change the plan** for a lasting internal one (pricing). **Reset the target** for a lasting external one (a new competitor). Short name: *fix, re-phase, change, reset*. It's one stage of a larger framework, [Solving a Business Problem]({{ '/frameworks/solving-a-business-problem.html' | relative_url }}).
 
 ## Where it breaks
 

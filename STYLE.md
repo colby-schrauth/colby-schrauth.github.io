@@ -23,16 +23,18 @@ Words to avoid: leverage, unlock, supercharge, seamless, robust, game-changer, "
 - **Titles in Title Case**, for every post, note, project, chapter, theory and framework: "Attribution Theory", "Campaign Tracking with UTMs". Small words stay lowercase unless they come first.
 - **The line under a title** (date, kind, role) is written in normal case and drawn in quiet Plex Sans; never lowercase it.
 
+- **Elegant and minimal.** Say it in the fewest words that stay clear: a sentence or two per idea. Use a table only for a true comparison (a few rows across the same columns), and a figure only where the shape of the idea matters. Most of a page is short prose and white space.
+
 ## 2. Structure
 
-Every playbook chapter (and most articles) uses this order. Frameworks are your own approach to a judgment-heavy problem (executive presence, building a data team): an opening sentence, the problem, the framework itself (usually with a figure), how you use it and where it breaks. No specimen and no "do this week".
+Every playbook chapter (and most articles) uses this order. Frameworks are your own approach to a judgment-heavy problem (executive presence, building a data team): an opening sentence, the problem, the framework itself (usually with a figure, with memory aids and examples worked into it) and where it breaks. No specimen and no "do this week".
 
 Theories are lighter: a place to jot down interesting ideas from any field, not only business. A theory opens with one plain sentence (no "The principle" label), then the idea in plain words, and, when there's something to say, where it comes from, a framework inside it and where it breaks. No specimen, no "do this week": it stays a general idea, not a worked case or a to-do. Figures are optional. Headings are plain and short.
 
 1. **The principle**: one sentence, the thing to remember if you forget everything else.
 2. **The specimen**: who or what we're following (not in theories).
 3. **The body**: the explanation, in short sections, carried by the specimen's story.
-4. **At least one figure**: a trace, a schematic, a matrix or a ledger.
+4. **At least one figure**: a trace, a schematic, a matrix, a grid, a bridge or a ledger.
 5. **Where it breaks**: the failure modes, as a list.
 6. **Do this week**: one concrete action (not in theories).
 
@@ -69,7 +71,7 @@ Tell the ad platforms about the earliest event that reliably predicts revenue.
 
 ## 4. Illustrations
 
-There are only four kinds of figure, and they are always drawn from data, never by hand, so they stay consistent.
+There are only six kinds of figure, and they are always drawn from data, never by hand, so they stay consistent.
 
 ### The trace (the signature figure)
 
@@ -98,7 +100,7 @@ traces:
 
 ### The schematic
 
-Shows **how the pieces connect**: stages left to right (stacked on phones), boxes inside each stage, and the boxes that matter lit in brass. Use for system maps and funnels. Place with `{% include schematic.html id="name" %}`.
+Shows **stages in order**: a row of joined boxes, left to right (stacked on phones), each with a bold name and its text underneath. The box that matters is lit in brass. Use it for processes, funnels and frameworks with steps. Like the matrix, it can carry `views` (tabs that swap each stage's text, with `cells` holding one `eg` per stage). For steps, set `numbered: true` and keep names to one word; the number sits small above the name, and each box's text stays under about 30 characters so the row stays short. Place with `{% include schematic.html id="name" %}`.
 
 ```yaml
 schematics:
@@ -168,11 +170,51 @@ matrices:
     lit: [Change the plan]
 ```
 
+### The grid
+
+Shows **a total as squares**, so you can see which part went where: every square is one unit (a dollar, a customer). The kept part is plain; what was lost splits into a right strip, a bottom strip and the corner where both fell, each in a small color with a key beside the grid. Use it for anything that multiplies (customers × price, visits × conversion). Place with `{% include grid.html id="name" %}`.
+
+```yaml
+grids:
+  corner:
+    caption: "Every square is $1: the corner is lost only because both fell"
+    note: Each column = one customer · each row = $1 of price
+    plan: [10, 10]      # columns, rows
+    actual: [8, 8]
+    labels:
+      kept: "Actual revenue | 8 customers × $8 = $64"
+      cols: "Lost to fewer customers only | 2 missing × $8 = $16"
+      rows: "Lost to a lower price only | 8 customers × $2 less = $16"
+      corner: "Lost to both at once | 2 missing × $2 less = $4"
+    total: "Total lost: $36"
+```
+
+### The bridge
+
+Shows **how a total moved from one value to another**, one step at a time: plan on top, each driver's drop (or rise) hanging from where the last one ended, actual at the bottom. The step that matters is lit in brass. When the steps are small next to the total, set `floor` so the bars start near the actual, and say so in the note. Place with `{% include bridge.html id="name" %}`.
+
+```yaml
+bridges:
+  swap:
+    caption: Conversion explains most of the miss
+    note: The bars start at $4.0M so the steps are visible
+    floor: 4.0
+    ceiling: 5.0
+    start: {label: Plan, value: 5.0, show: "$5.00M"}
+    steps:
+      - {label: Visitors, value: -0.25, show: "−$250K"}
+      - {label: Conversion, value: -0.475, show: "−$475K"}
+    end: {label: Actual, value: 4.275, show: "$4.28M"}
+    lit: Conversion
+```
+
 ### The ledger
 
 Shows **numbers side by side**. A plain Markdown table: the first column names the thing, headers are short, and the row that matters has its key cells in `**bold**` (they turn brass).
 
 ### Rules for every figure
+
+- **One set of parts.** Every figure is built from the same pieces: square boxes that share thin lines (`--grid`), a bold name (Plex Sans 16, semibold), gray text underneath (15), small labels (13), 12px color-key squares, a bold title on top and an optional gray note below. A new figure reuses these; it never brings its own box, font size or arrow style.
 
 - **Square and simple.** Sharp corners, thin lines, boxes that share their edges like a grid. No rounded cards, shadows, icons, stock images, clip art, gradients or 3D.
 - **One plain font.** Figures use IBM Plex Sans, like every label on the site: sentence case, regular weight for labels, semibold only for names and the title. No monospace, no letter-spaced capitals.
@@ -197,7 +239,7 @@ Recurring specimens, so readers meet the same people across pieces. Reuse them b
 - [ ] Opens with a principle, not a tool
 - [ ] One specimen, followed throughout (theories: none)
 - [ ] Every term glossed once on first use
-- [ ] At least one figure (trace, schematic, matrix or ledger), with a title that says what to notice
+- [ ] At least one figure (trace, schematic, matrix, grid, bridge or ledger), with a title that says what to notice
 - [ ] A "where it breaks" list
 - [ ] A "do this week" action (theories: none)
 - [ ] Illustrative numbers labelled

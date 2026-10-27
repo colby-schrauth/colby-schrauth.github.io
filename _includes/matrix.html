@@ -14,22 +14,7 @@
 {%- assign act_label = m.act_label | default: "What it leads to" -%}
 <figure class="figure matrix-figure"{% if m.views %} data-views{% endif %}>
   <figcaption>{{ m.caption }}</figcaption>
-  {%- if m.views %}
-  <div class="matrix-tabs" role="tablist" aria-label="The theory and examples">
-    {%- assign first = m.views | first %}
-    <button type="button" role="tab" class="matrix-tab matrix-tab-main" data-view="0" aria-selected="true">{{ first.label }}</button>
-    {%- if m.views.size > 1 %}
-    <div class="matrix-examples" role="presentation">
-      <span class="matrix-examples-label" aria-hidden="true">Examples</span>
-      <div class="matrix-examples-row" role="presentation">
-        {%- for view in m.views offset: 1 %}
-        <button type="button" role="tab" class="matrix-tab" data-view="{{ forloop.index }}" aria-selected="false" tabindex="-1">{{ view.label }}</button>
-        {%- endfor %}
-      </div>
-    </div>
-    {%- endif %}
-  </div>
-  {%- endif %}
+  {%- if m.views %}{% include figure-tabs.html views=m.views %}{% endif %}
   <div class="matrix" role="group" aria-label="{{ m.caption | escape }}">
     <span></span>
     {%- for col in m.cols %}{% assign parts = col | split: " | " %}

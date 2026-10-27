@@ -1,0 +1,31 @@
+{%- comment -%}
+  The grid: a total drawn as squares, so you can see which part went where (see STYLE.md).
+  Usage: {% include grid.html id="corner" %}, with page.grids.corner defined in front matter.
+  `plan` and `actual` are [columns, rows]. Squares inside `actual` are what you kept; the rest of the
+  plan splits into the right strip (`cols`), the bottom strip (`rows`) and the `corner` where both fell.
+  Each label is "Name | the math". `total` is an optional bold line under the key.
+{%- endcomment -%}
+{%- assign g = page.grids[include.id] -%}
+{%- assign pc = g.plan[0] | minus: 1 -%}{%- assign pr = g.plan[1] | minus: 1 -%}
+{%- assign ac = g.actual[0] -%}{%- assign ar = g.actual[1] -%}
+<figure class="figure grid-figure">
+  <figcaption>{{ g.caption }}</figcaption>
+  <div class="grid-body">
+    <div class="grid-squares" style="--cols: {{ g.plan[0] }}" role="img" aria-label="{{ g.caption | escape }}">
+      {%- for r in (0..pr) %}{% for c in (0..pc) %}
+      {%- if c < ac and r < ar %}{% assign k = "kept" %}{% elsif r < ar %}{% assign k = "cols" %}{% elsif c < ac %}{% assign k = "rows" %}{% else %}{% assign k = "corner" %}{% endif -%}
+      <i class="sq {{ k }}"></i>
+      {%- endfor %}{% endfor %}
+    </div>
+    <ul class="grid-key">
+      {%- assign parts = "kept,cols,rows,corner" | split: "," %}
+      {%- for part in parts %}{% assign label = g.labels[part] %}
+      {%- if label %}{% assign bits = label | split: " | " %}
+      <li><i class="sq {{ part }}" aria-hidden="true"></i><span><b>{{ bits[0] }}</b>{% if bits[1] %}<small>{{ bits[1] }}</small>{% endif %}</span></li>
+      {%- endif %}
+      {%- endfor %}
+      {%- if g.total %}<li class="grid-total">{{ g.total }}</li>{% endif %}
+    </ul>
+  </div>
+  {%- if g.note %}<p class="figure-note">{{ g.note }}</p>{% endif %}
+</figure>

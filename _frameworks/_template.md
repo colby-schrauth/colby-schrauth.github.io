@@ -15,11 +15,7 @@ One opening sentence: the core of how you approach this.
 
 ## The framework
 
-*The parts, lenses or questions you use. A matrix or schematic often helps here (see STYLE.md).*
-
-## How I use it
-
-*When you reach for it, and what it looks like in practice.*
+*The parts, lenses or questions you use. A matrix or schematic often helps here (see STYLE.md). Work memory aids and real situations into the parts themselves (or into the figure's example tabs), not a separate section.*
 
 ## Where it breaks
 

@@ -1,19 +1,33 @@
 {%- comment -%}
-  The schematic: how the pieces connect (see STYLE.md).
+  The schematic: stages in order, as a row of joined boxes (see STYLE.md).
   Usage: {% include schematic.html id="ladder" %}, with page.schematics.ladder defined in front matter.
-  A node is "Name" or "Name | small note"; names listed in `lit` are drawn in brass.
+  Each stage has a `name` and `nodes`; a node is "Text" or "Text | small note". Stages whose node text
+  is listed in `lit` are drawn in brass. `numbered: true` puts a small step number above each name. Optional `views` (like the matrix): tabs that swap each stage's
+  text; each view has a `label` and `cells` (one `eg` per stage, in order).
 {%- endcomment -%}
 {%- assign s = page.schematics[include.id] -%}
-<figure class="figure schematic">
+<figure class="figure schematic"{% if s.views %} data-views{% endif %}>
   <figcaption>{{ s.caption }}</figcaption>
-  <ol class="schematic-stages">
-    {%- for stage in s.stages %}
-    <li class="schematic-stage">
-      <span class="stage-name">{{ stage.name }}</span>
-      {%- for node in stage.nodes %}
-      {%- assign parts = node | split: " | " %}{% assign name = parts[0] | strip %}
-      <span class="node{% if s.lit contains name %} lit{% endif %}">{{ name }}{% if parts[1] %}<small>{{ parts[1] }}</small>{% endif %}</span>
+  {%- if s.views %}{% include figure-tabs.html views=s.views %}{% endif %}
+  <ol class="schematic-stages" style="--stages: {{ s.stages.size }}">
+    {%- for stage in s.stages %}{% assign i = forloop.index0 %}
+    {%- assign lit = false %}{% for node in stage.nodes %}{% assign n = node | split: " | " | first | strip %}{% if s.lit contains n %}{% assign lit = true %}{% endif %}{% endfor %}
+    <li class="quad schematic-stage{% if lit %} lit{% endif %}" style="--i: {{ i }}">
+      {%- if s.numbered %}<span class="stage-num">{{ forloop.index }}</span>{% endif %}
+      <span class="quad-name">{{ stage.name }}</span>
+      {%- if s.views %}
+      <div class="quad-views">
+        {%- for view in s.views %}{% assign v = view.cells[i] %}
+        <div class="quad-view{% if forloop.first %} is-active{% endif %}" data-view="{{ forloop.index0 }}"{% unless forloop.first %} aria-hidden="true"{% endunless %}>
+          {%- if v.eg %}<span class="quad-eg">{{ v.eg }}</span>{% endif %}
+        </div>
+        {%- endfor %}
+      </div>
+      {%- else %}
+      {%- for node in stage.nodes %}{% assign parts = node | split: " | " %}
+      <span class="quad-eg">{{ parts[0] | strip }}{% if parts[1] %}<small>{{ parts[1] }}</small>{% endif %}</span>
       {%- endfor %}
+      {%- endif %}
     </li>
     {%- endfor %}
   </ol>

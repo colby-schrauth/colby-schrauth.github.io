@@ -174,3 +174,30 @@ document.querySelectorAll('[data-views]').forEach((fig) => {
     });
   });
 });
+
+// "On this page": a contents list built from a theory or framework's headings, highlighting where you are.
+(function () {
+  const aside = document.querySelector('.entry-toc');
+  if (!aside) return;
+  const heads = [...document.querySelectorAll('.entry-body .prose h2[id], .entry-body .prose h3[id]')];
+  if (heads.length < 3) return;
+  const list = aside.querySelector('[data-toc]');
+  const links = heads.map((h) => {
+    const li = document.createElement('li');
+    const a = document.createElement('a');
+    a.href = '#' + h.id;
+    a.textContent = h.textContent;
+    if (h.tagName === 'H3') a.className = 'sub';
+    li.appendChild(a);
+    list.appendChild(li);
+    return a;
+  });
+  aside.hidden = false;
+  const mark = () => {
+    let current = 0;
+    heads.forEach((h, i) => { if (h.getBoundingClientRect().top < window.innerHeight * 0.3) current = i; });
+    links.forEach((a, i) => a.setAttribute('aria-current', i === current));
+  };
+  window.addEventListener('scroll', mark, { passive: true });
+  mark();
+})();
