@@ -25,7 +25,7 @@ Before writing, read `STYLE.md` (voice, figures) and the matching template: `_th
 
 ## The figure
 
-Use a figure only when the idea has a shape: a schematic for stages, a grid for anything that multiplies, a bridge for how a total moved from plan to actual, a ledger (plain table) for side-by-side facts. For two axes, use the matrix (`_includes/matrix.html`) with `views`: the first view is the general one (one large tab), and each example (a missed target, a won deal, a diet, an argument) is a tab underneath. See the matrix section of `STYLE.md` for the YAML.
+Use a figure only when the idea has a shape: a schematic for stages, a grid for anything that multiplies, a bridge for how a total moved from plan to actual, a curve when the shape over time is the idea, a ledger (plain table) for side-by-side facts. For two axes, use the matrix (`_includes/matrix.html`) with `views`: the first view is the general one (one large tab), and each example (a missed target, a won deal, a diet, an argument) is a tab underneath. See the matrix section of `STYLE.md` for the YAML.
 
 - The `caption` is a title that says what to notice, in sentence case.
 - Add a `note` on how to read it ("Columns = … · rows = …").

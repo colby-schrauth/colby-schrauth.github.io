@@ -34,7 +34,7 @@ Theories are lighter: a place to jot down interesting ideas from any field, not 
 1. **The principle**: one sentence, the thing to remember if you forget everything else.
 2. **The specimen**: who or what we're following (not in theories).
 3. **The body**: the explanation, in short sections, carried by the specimen's story.
-4. **At least one figure**: a trace, a schematic, a matrix, a grid, a bridge or a ledger.
+4. **At least one figure**: a trace, a schematic, a matrix, a grid, a bridge, a curve or a ledger.
 5. **Where it breaks**: the failure modes, as a list.
 6. **Do this week**: one concrete action (not in theories).
 
@@ -71,7 +71,7 @@ Tell the ad platforms about the earliest event that reliably predicts revenue.
 
 ## 4. Illustrations
 
-There are only six kinds of figure, and they are always drawn from data, never by hand, so they stay consistent.
+There are only seven kinds of figure, and they are always drawn from data, never by hand, so they stay consistent.
 
 ### The trace (the signature figure)
 
@@ -208,6 +208,23 @@ bridges:
     lit: Conversion
 ```
 
+### The curve
+
+Shows **how two things change along a journey**: one line in gray, the line that matters dashed in brass, with labeled points along the bottom (and one optional label at a peak). Use it when the shape over time is the idea, like simplicity on the far side of complexity. Lines are SVG paths in a 100 × 40 box, x left to right and y top to bottom. Place with `{% include curve.html id="name" %}`.
+
+```yaml
+curves:
+  simplicity:
+    caption: The detail you handle rises and falls; your understanding keeps climbing
+    lines:
+      - {label: Detail you handle, d: "M4 36 L48 5 L96 36"}
+      - {label: Your understanding, lit: true, d: "M4 35 L50 21 L96 7"}
+    marks:
+      - {x: 4, label: "1. Naive simple"}
+      - {x: 96, label: "3. Earned simple"}
+    peak: {x: 48, y: 5, label: Deep in the weeds}
+```
+
 ### The ledger
 
 Shows **numbers side by side**. A plain Markdown table: the first column names the thing, headers are short, and the row that matters has its key cells in `**bold**` (they turn brass).
@@ -239,7 +256,7 @@ Recurring specimens, so readers meet the same people across pieces. Reuse them b
 - [ ] Opens with a principle, not a tool
 - [ ] One specimen, followed throughout (theories: none)
 - [ ] Every term glossed once on first use
-- [ ] At least one figure (trace, schematic, matrix, grid, bridge or ledger), with a title that says what to notice
+- [ ] At least one figure (trace, schematic, matrix, grid, bridge, curve or ledger), with a title that says what to notice
 - [ ] A "where it breaks" list
 - [ ] A "do this week" action (theories: none)
 - [ ] Illustrative numbers labelled
