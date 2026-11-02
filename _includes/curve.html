@@ -1,0 +1,25 @@
+{%- comment -%}
+  The curve: how two things change along a journey (see STYLE.md).
+  Usage: {% include curve.html id="simplicity" %}, with page.curves.simplicity defined in front matter.
+  Lines are SVG paths in a 100 × 40 box (x left to right, y top to bottom); the line with `lit: true`
+  is drawn in brass and dashed. `marks` label points along the bottom; `peak` labels one point.
+{%- endcomment -%}
+{%- assign c = page.curves[include.id] -%}
+<figure class="figure curve-figure">
+  <figcaption>{{ c.caption }}</figcaption>
+  <div class="curve-plot">
+    <svg viewBox="0 0 100 40" preserveAspectRatio="none" role="img" aria-label="{{ c.caption | escape }}">
+      <line class="curve-axis" x1="0" y1="39.5" x2="100" y2="39.5"/>
+      {%- for m in c.marks %}<line class="curve-tick" x1="{{ m.x }}" y1="0" x2="{{ m.x }}" y2="39.5"/>{% endfor %}
+      {%- for line in c.lines %}<path class="curve-line{% if line.lit %} lit{% endif %}" d="{{ line.d }}"/>{% endfor %}
+    </svg>
+    {%- if c.peak %}<span class="curve-peak" style="left: {{ c.peak.x }}%; top: {{ c.peak.y | divided_by: 40.0 | times: 100 }}%">{{ c.peak.label }}</span>{% endif %}
+  </div>
+  <ol class="curve-marks">
+    {%- for m in c.marks %}<li style="left: {{ m.x }}%">{{ m.label }}</li>{% endfor %}
+  </ol>
+  <ul class="curve-key">
+    {%- for line in c.lines %}<li><i class="{% if line.lit %}lit{% endif %}"></i>{{ line.label }}</li>{% endfor %}
+  </ul>
+  {%- if c.note %}<p class="figure-note">{{ c.note }}</p>{% endif %}
+</figure>
