@@ -71,7 +71,7 @@ Tell the ad platforms about the earliest event that reliably predicts revenue.
 
 ## 4. Illustrations
 
-There are only six kinds of figure, and they are always drawn from data, never by hand, so they stay consistent.
+There are only seven kinds of figure, and they are always drawn from data, never by hand, so they stay consistent.
 
 ### The trace (the signature figure)
 
@@ -212,6 +212,14 @@ bridges:
 
 Shows **numbers side by side**. A plain Markdown table: the first column names the thing, headers are short, and the row that matters has its key cells in `**bold**` (they turn brass).
 
+### The chart
+
+Shows **real data computed live**: a histogram, a distribution, anything with too many points for boxes. Drawn with [Observable Plot](https://observablehq.com/plot/) from a small script in `js/`, so readers can press a button and watch it run again. Use it only when the data itself is the point; most ideas still belong in the six figures above.
+
+Set `charts: <script>.js` in the page's front matter (it loads Plot and the script), then place each chart with `{% include chart.html id="name" caption="..." note="..." fallback="..." %}`. The script draws into the figure with that id. `fallback` is the one-sentence result, shown when scripts are off.
+
+The same rules hold: brass for the part that matters (the middle 95%), the figure gray for the rest, coral only for a break line, Plex Sans throughout, hairline gridlines, colors read from the CSS tokens and redrawn in night mode. `js/bootstrap-charts.js` is the worked example.
+
 ### Rules for every figure
 
 - **One set of parts.** Every figure is built from the same pieces: square boxes that share thin lines (`--grid`), a bold name (Plex Sans 16, semibold), gray text underneath (15), small labels (13), 12px color-key squares, a bold title on top and an optional gray note below. A new figure reuses these; it never brings its own box, font size or arrow style.
@@ -239,7 +247,7 @@ Recurring specimens, so readers meet the same people across pieces. Reuse them b
 - [ ] Opens with a principle, not a tool
 - [ ] One specimen, followed throughout (theories: none)
 - [ ] Every term glossed once on first use
-- [ ] At least one figure (trace, schematic, matrix, grid, bridge or ledger), with a title that says what to notice
+- [ ] At least one figure (trace, schematic, matrix, grid, bridge, ledger or chart), with a title that says what to notice
 - [ ] A "where it breaks" list
 - [ ] A "do this week" action (theories: none)
 - [ ] Illustrative numbers labelled

@@ -61,5 +61,11 @@
 
     {% include search-index.html %}
     <script src="{{ '/js/site.js' | relative_url }}?v={{ site.time | date: '%s' }}" defer></script>
+    {%- if page.charts %}
+    {%- comment -%} Pages with live charts set `charts:` to their script in js/ (see STYLE.md, "The chart"). {%- endcomment %}
+    <script src="https://cdn.jsdelivr.net/npm/d3@7.9.0/dist/d3.min.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/@observablehq/plot@0.6.17/dist/plot.umd.min.js" defer></script>
+    <script src="{{ '/js/' | append: page.charts | relative_url }}?v={{ site.time | date: '%s' }}" defer></script>
+    {%- endif %}
   </body>
 </html>

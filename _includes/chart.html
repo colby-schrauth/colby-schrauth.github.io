@@ -1,0 +1,15 @@
+{%- comment -%}
+  The chart: a live data chart drawn by the page's `charts:` script (see STYLE.md).
+  Usage: {% include chart.html id="medians" caption="..." note="..." button="Run it again" fallback="..." %}
+  The script finds the figure by `data-chart="<id>"` and draws into .chart-plot.
+{%- endcomment -%}
+<figure class="figure chart" data-chart="{{ include.id }}">
+  <figcaption>{{ include.caption }}</figcaption>
+  <div class="chart-plot" role="img" aria-label="{{ include.caption }}"></div>
+  {%- if include.fallback %}<p class="chart-fallback">{{ include.fallback }}</p>{% endif %}
+  <div class="chart-foot">
+    <p class="chart-status" aria-live="polite"></p>
+    <button class="chart-button" type="button">{{ include.button | default: "Run it again" }}</button>
+  </div>
+  {%- if include.note %}<p class="figure-note">{{ include.note }}</p>{% endif %}
+</figure>

@@ -233,6 +233,28 @@ kbd { border-radius: 4px; padding: 2px 6px; }
 .figure-note { margin: 16px 0 0; font: 14px/1.5 var(--sans); color: var(--muted); }
 .figure-scroll { overflow-x: auto; }
 
+/* The chart: live data charts drawn with Observable Plot (js/bootstrap-charts.js) */
+.chart-plot { min-height: 160px; }
+.chart-plot svg { display: block; max-width: 100%; height: auto; }
+.chart-foot { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 12px 20px; margin-top: 14px; }
+.chart-status { margin: 0; font: 14px/1.5 var(--sans); color: var(--muted); font-variant-numeric: tabular-nums; }
+.chart-button { min-height: 40px; padding: 8px 14px; font: 500 14px var(--sans); color: var(--text); background: var(--surface); border: 1px solid var(--grid); border-radius: 0; cursor: pointer; }
+.chart-button:hover { border-color: var(--accent); color: var(--accent); }
+.chart-button:disabled { opacity: .5; cursor: progress; }
+.chart-fallback { font: 15px/1.6 var(--sans); color: var(--muted); }
+.slots-row + .slots-row { margin-top: 18px; }
+.slots-label { margin: 0 0 8px; font: 13px/1.4 var(--sans); color: var(--muted); }
+.prose .slots, .slots { display: grid; grid-template-columns: repeat(15, minmax(0, 1fr)); margin: 0; padding: 0; list-style: none; border-top: 1px solid var(--grid); border-left: 1px solid var(--grid); }
+.prose .slots li.slot { margin: 0; }
+.slot { display: grid; place-items: center; aspect-ratio: 1; min-width: 0; font: 13px var(--sans); font-variant-numeric: tabular-nums; color: var(--text); background: var(--surface); border-right: 1px solid var(--grid); border-bottom: 1px solid var(--grid); cursor: default; }
+.slot.is-skipped { color: var(--muted); background: var(--bg); text-decoration: line-through; text-decoration-color: var(--grid); }
+.slot.is-repeat { font-weight: 600; color: var(--strong); }
+.slot.is-median { color: var(--bg); background: var(--accent); font-weight: 600; }
+@media (max-width: 560px) { .slot { font-size: 10px; aspect-ratio: auto; height: 34px; } }
+.js .chart-fallback { display: none; }
+.prose details { margin: 1.5em 0; }
+.prose summary { cursor: pointer; font: 500 16px var(--sans); color: var(--accent); }
+
 .trace-grid { display: grid; grid-template-columns: minmax(84px, 150px) repeat(var(--moments), minmax(48px, 1fr)); min-width: calc(84px + var(--moments) * 48px); }
 .trace-row { display: contents; }
 .trace-moment { display: flex; flex-direction: column; align-items: center; gap: 4px; padding: 0 4px 14px; text-align: center; font: 500 13px/1.3 var(--sans); color: var(--muted); }
