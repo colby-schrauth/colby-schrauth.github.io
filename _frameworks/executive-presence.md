@@ -46,7 +46,7 @@ schematics:
         cells:
           - eg: I build data teams that ship
           - eg: Clarity beats more data
-          - eg: 50,000 stuck charts, cleared
+          - eg: A backlog no one could clear, cleared
           - eg: Which is why I'd start with you
       - label: Should we build or buy?
         cells:
